@@ -3,5 +3,5 @@
 module.exports = core;
 
 function core() {
-  return 'Hello from core jie 2';
+  return 'Hello from core jie 23';
 }
