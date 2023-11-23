@@ -1,5 +1,5 @@
 {
-  "name": "jie-cli",
+  "name": "root",
   "private": false,
   "workspaces": [
     "packages/*"
