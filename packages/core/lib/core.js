@@ -1,4 +1,4 @@
-'use strict';
+#! /usr/bin/env node
 const utils = require('@jie-cli/utils')
 
 

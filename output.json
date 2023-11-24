@@ -1,0 +1,82 @@
+{
+  "graph": {
+    "nodes": {
+      "@jie-cli/utils": {
+        "name": "@jie-cli/utils",
+        "type": "lib",
+        "data": {
+          "root": "packages/utils",
+          "sourceRoot": "packages/utils",
+          "name": "@jie-cli/utils",
+          "projectType": "library",
+          "targets": {
+            "test": {
+              "dependsOn": [
+                "^test"
+              ],
+              "executor": "nx:run-script",
+              "options": {
+                "script": "test"
+              },
+              "configurations": {}
+            },
+            "nx-release-publish": {
+              "dependsOn": [
+                "^nx-release-publish"
+              ],
+              "executor": "@nx/js:release-publish",
+              "options": {},
+              "configurations": {}
+            }
+          },
+          "implicitDependencies": [],
+          "tags": []
+        }
+      },
+      "@jie-cli/core": {
+        "name": "@jie-cli/core",
+        "type": "lib",
+        "data": {
+          "root": "packages/core",
+          "sourceRoot": "packages/core",
+          "name": "@jie-cli/core",
+          "projectType": "library",
+          "targets": {
+            "test": {
+              "dependsOn": [
+                "^test"
+              ],
+              "executor": "nx:run-script",
+              "options": {
+                "script": "test"
+              },
+              "configurations": {}
+            },
+            "nx-release-publish": {
+              "dependsOn": [
+                "^nx-release-publish"
+              ],
+              "executor": "@nx/js:release-publish",
+              "options": {},
+              "configurations": {}
+            }
+          },
+          "implicitDependencies": [],
+          "tags": []
+        }
+      }
+    },
+    "dependencies": {
+      "@jie-cli/utils": [],
+      "@jie-cli/core": [
+        {
+          "source": "@jie-cli/core",
+          "target": "@jie-cli/utils",
+          "type": "static"
+        }
+      ]
+    }
+  },
+  "affectedProjects": [],
+  "criticalPath": []
+}
