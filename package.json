@@ -4,8 +4,8 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
   "devDependencies": {
+    "@jie-cli/core": "file:packages/core",
     "lerna": "^7.4.2"
   }
 }

@@ -1,0 +1,15 @@
+17 error Error: Command failed with exit code 1: git remote update
+17 error git@github.com: Permission denied (publickey).
+17 error fatal: Could not read from remote repository.
+17 error
+17 error Please make sure you have the correct access rights
+17 error and the repository exists.
+17 error error: could not fetch origin
+17 error Fetching origin
+17 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
+17 error     at Function.module.exports.sync (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:186:17)
+17 error     at Object.execSync (D:\Project\Learn\webimooc\jie-cli\node_modules\@lerna\child-process\index.js:39:16)
+17 error     at updateRemote (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:7617:18)
+17 error     at isBehindUpstream (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:7607:3)
+17 error     at VersionCommand.initialize (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:7914:57)
+17 error     at VersionCommand.runCommand (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:1761:36)

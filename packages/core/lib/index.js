@@ -6,7 +6,6 @@ module.exports = core;
 
 function core() {
   utils();
-  console.log('222')
+  console.log('222344')
   return 'Hello from core jie 23';
 }
-core();
