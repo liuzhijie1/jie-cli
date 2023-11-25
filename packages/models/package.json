@@ -1,0 +1,26 @@
+{
+  "name": "@jie-cli/models",
+  "version": "0.0.14",
+  "description": "> TODO: description",
+  "author": "liuzhijie1 <572890972@qq.com>",
+  "homepage": "https://github.com/liuzhijie1/jie-cli#readme",
+  "license": "ISC",
+  "main": "lib/models.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuzhijie1/jie-cli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/models.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/liuzhijie1/jie-cli/issues"
+  }
+}

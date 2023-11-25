@@ -27,6 +27,7 @@
     "@jie-cli/commands": "file:../../../commands",
     "@jie-cli/log": "file:../../../log",
     "@jie-cli/utils": "file:../../../utils",
+    "@jie-cli/models": "file:../../../models",
     "dedent": "^1.5.1",
     "import-local": "^3.1.0",
     "npmlog": "^7.0.1"
