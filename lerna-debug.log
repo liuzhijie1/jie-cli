@@ -1,15 +1,13 @@
-17 error Error: Command failed with exit code 1: git remote update
-17 error git@github.com: Permission denied (publickey).
-17 error fatal: Could not read from remote repository.
-17 error
-17 error Please make sure you have the correct access rights
-17 error and the repository exists.
-17 error error: could not fetch origin
-17 error Fetching origin
-17 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
-17 error     at Function.module.exports.sync (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:186:17)
-17 error     at Object.execSync (D:\Project\Learn\webimooc\jie-cli\node_modules\@lerna\child-process\index.js:39:16)
-17 error     at updateRemote (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:7617:18)
-17 error     at isBehindUpstream (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:7607:3)
-17 error     at VersionCommand.initialize (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:7914:57)
-17 error     at VersionCommand.runCommand (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:1761:36)
+41 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
+41 error npm ERR! code ETARGET
+41 error npm ERR! notarget No matching version found for @jie-cli/utils@^0.0.6.
+41 error npm ERR! notarget In most cases you or one of your dependencies are requesting
+41 error npm ERR! notarget a package version that doesn't exist.
+41 error
+41 error npm ERR! A complete log of this run can be found in:
+41 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T06_29_57_214Z-debug.log
+41 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
+41 error     at handlePromise (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:114:26)
+41 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+41 error     at async VersionCommand.updatePackageVersions (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:8317:13)
+41 error     at async Promise.all (index 0)
