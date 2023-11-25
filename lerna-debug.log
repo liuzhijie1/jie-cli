@@ -1,13 +1,13 @@
-53 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
-53 error npm ERR! code ETARGET
-53 error npm ERR! notarget No matching version found for @jie-cli/log@^0.0.11.
-53 error npm ERR! notarget In most cases you or one of your dependencies are requesting
-53 error npm ERR! notarget a package version that doesn't exist.
-53 error
-53 error npm ERR! A complete log of this run can be found in:
-53 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T16_24_11_228Z-debug.log
-53 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
-53 error     at handlePromise (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:114:26)
-53 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
-53 error     at async VersionCommand.updatePackageVersions (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:8317:13)
-53 error     at async Promise.all (index 0)
+55 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
+55 error npm ERR! code ETARGET
+55 error npm ERR! notarget No matching version found for @jie-cli/log@^0.0.5.
+55 error npm ERR! notarget In most cases you or one of your dependencies are requesting
+55 error npm ERR! notarget a package version that doesn't exist.
+55 error
+55 error npm ERR! A complete log of this run can be found in:
+55 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T16_25_16_404Z-debug.log
+55 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
+55 error     at handlePromise (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:114:26)
+55 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+55 error     at async VersionCommand.updatePackageVersions (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:8317:13)
+55 error     at async Promise.all (index 0)

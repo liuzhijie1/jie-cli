@@ -1,6 +1,6 @@
 {
   "name": "@jie-cli/core",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "> TODO: description",
   "author": "liujie <572890972@qq.com>",
   "homepage": "",
@@ -24,8 +24,8 @@
   },
   "gitHead": "a4e6668caf003c1cc33eb0a7d8faa17a23aaa3b6",
   "dependencies": {
-    "@jie-cli/log": "^0.0.5",
-    "@jie-cli/utils": "^0.0.5",
+    "@jie-cli/log": "^0.0.10",
+    "@jie-cli/utils": "^0.0.10",
     "dedent": "^1.5.1",
     "import-local": "^3.1.0",
     "npmlog": "^7.0.1"
