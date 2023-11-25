@@ -1,11 +1,11 @@
 41 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
 41 error npm ERR! code ETARGET
-41 error npm ERR! notarget No matching version found for @jie-cli/utils@^0.0.6.
+41 error npm ERR! notarget No matching version found for @jie-cli/utils@^0.0.7.
 41 error npm ERR! notarget In most cases you or one of your dependencies are requesting
 41 error npm ERR! notarget a package version that doesn't exist.
 41 error
 41 error npm ERR! A complete log of this run can be found in:
-41 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T06_29_57_214Z-debug.log
+41 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T06_31_23_640Z-debug.log
 41 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
 41 error     at handlePromise (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:114:26)
 41 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
