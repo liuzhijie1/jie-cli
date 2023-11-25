@@ -1,60 +1,13 @@
-0 silly argv {
-0 silly argv   _: [ 'version' ],
-0 silly argv   lernaVersion: '7.4.2',
-0 silly argv   '$0': 'C:\\Program Files\\nodejs\\node_modules\\lerna\\dist\\cli.js'
-0 silly argv }
-1 notice cli v7.4.2
-2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
-3 verbose rootPath D:\Project\Learn\webimooc\jie-cli
-4 info current version 0.0.7
-5 silly isAnythingCommitted
-6 verbose isAnythingCommitted 1
-7 silly getCurrentBranch
-8 verbose currentBranch main
-9 silly remoteBranchExists
-10 silly isBehindUpstream
-11 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 0
-12 silly hasTags
-13 verbose hasTags true
-14 silly git-describe.sync "v0.0.5-6-g53e72cf" => {"lastTagName":"v0.0.5","lastVersion":"v0.0.5","refCount":"6","sha":"53e72cf","isDirty":false}
-15 info Looking for changed packages since v0.0.5
-16 silly checking diff packages/core
-17 silly found diff in packages/core/bin/index.js
-17 silly found diff in packages/core/lib/index.js
-17 silly found diff in packages/core/package.json
-18 verbose filtered diff [
-18 verbose filtered diff   'packages/core/bin/index.js',
-18 verbose filtered diff   'packages/core/lib/index.js',
-18 verbose filtered diff   'packages/core/package.json'
-18 verbose filtered diff ]
-19 silly checking diff packages/utils
-20 silly found diff in packages/utils/lib/utils.js
-20 silly found diff in packages/utils/package.json
-21 verbose filtered diff [ 'packages/utils/lib/utils.js', 'packages/utils/package.json' ]
-22 verbose updated @jie-cli/core
-23 verbose updated @jie-cli/utils
-24 verbose git-describe undefined => "v0.0.5-6-g53e72cf"
-25 silly git-describe parsed => {"lastTagName":"v0.0.5","lastVersion":"v0.0.5","refCount":"6","sha":"53e72cf","isDirty":false}
-26 info execute Skipping releases
-27 silly lifecycle No script for "preversion" in "root", continuing
-28 silly lifecycle No script for "preversion" in "@jie-cli/utils", continuing
-29 verbose version @jie-cli/utils has no lockfile. Skipping lockfile update.
-30 silly lifecycle No script for "version" in "@jie-cli/utils", continuing
-31 silly lifecycle No script for "preversion" in "@jie-cli/core", continuing
-32 verbose version @jie-cli/core has no lockfile. Skipping lockfile update.
-33 silly lifecycle No script for "version" in "@jie-cli/core", continuing
-34 silly lifecycle No script for "version" in "root", continuing
-35 verbose version Updating root package-lock.json
-36 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
-36 error npm ERR! code ETARGET
-36 error npm ERR! notarget No matching version found for @jie-cli/utils@^0.0.8.
-36 error npm ERR! notarget In most cases you or one of your dependencies are requesting
-36 error npm ERR! notarget a package version that doesn't exist.
-36 error
-36 error npm ERR! A complete log of this run can be found in:
-36 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T06_39_02_410Z-debug.log
-36 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
-36 error     at handlePromise (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:114:26)
-36 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
-36 error     at async VersionCommand.updatePackageVersions (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:8317:13)
-36 error     at async Promise.all (index 0)
+53 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
+53 error npm ERR! code ETARGET
+53 error npm ERR! notarget No matching version found for @jie-cli/log@^0.0.11.
+53 error npm ERR! notarget In most cases you or one of your dependencies are requesting
+53 error npm ERR! notarget a package version that doesn't exist.
+53 error
+53 error npm ERR! A complete log of this run can be found in:
+53 error npm ERR!     C:\Users\57289\AppData\Local\npm-cache\_logs\2023-11-25T16_24_11_228Z-debug.log
+53 error     at makeError (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\lib\error.js:59:11)
+53 error     at handlePromise (D:\Project\Learn\webimooc\jie-cli\node_modules\execa\index.js:114:26)
+53 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+53 error     at async VersionCommand.updatePackageVersions (D:\Project\Learn\webimooc\jie-cli\node_modules\lerna\dist\index.js:8317:13)
+53 error     at async Promise.all (index 0)
