@@ -1,8 +1,8 @@
 'use strict';
-const log = require('npmlog')
+const npmlog = require('npmlog')
 
 module.exports = log;
 
 function log() {
-  log.info('cli', 'test')
+  npmlog.info('cli', 'test1')
 }

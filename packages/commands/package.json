@@ -1,0 +1,29 @@
+{
+  "name": "@jie-cli/commands",
+  "version": "0.0.10",
+  "description": "> TODO: description",
+  "author": "liuzhijie1 <572890972@qq.com>",
+  "homepage": "https://github.com/liuzhijie1/jie-cli#readme",
+  "license": "ISC",
+  "main": "lib/commands.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuzhijie1/jie-cli.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/commands.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/liuzhijie1/jie-cli/issues"
+  }
+}
