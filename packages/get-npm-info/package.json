@@ -25,5 +25,10 @@
   },
   "bugs": {
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "semver": "^7.5.4",
+    "url-join": "^4.0.0"
   }
 }

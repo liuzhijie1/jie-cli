@@ -18,7 +18,7 @@ let args, config;
 
 module.exports = core;
 
-function core() {
+async function core() {
   try {
     // utils();
     // console.log('222344444**2')
@@ -30,7 +30,7 @@ function core() {
     checkUserHome();
     checkInputArgs();
     checkEnv();
-    checkGlobalUpdate();
+    await checkGlobalUpdate();
     // getNpmInfo.getNpmInfo();
     // createDefaultConfig();
     // log.verbose('debug', 'test debug log')
@@ -40,12 +40,16 @@ function core() {
   }
 }
 
-function checkGlobalUpdate() {
+async function checkGlobalUpdate() {
   const currentVersion = pkg.version;
   const npmName = pkg.name;
 
-  const { getNpmInfo } = require('@jie-cli/get-npm-info')
-  getNpmInfo(npmName)
+  const { getNpmSemverVersion } = require('@jie-cli/get-npm-info')
+  const lastVersion = await getNpmSemverVersion(currentVersion, npmName)
+  console.log('ooo', lastVersion)
+  if (lastVersion && semver.gt(lastVersion, currentVersion)) {
+    log.warn('更新提示：', colors.yellow(`请手动更新 ${npmName}, 当前版本：${currentVersion}, 最新版本：${lastVersion},更新命令: npm install -g ${npmName}`));
+  }
 }
 
 function createDefaultConfig() {
