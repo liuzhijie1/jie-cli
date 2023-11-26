@@ -1,11 +1,11 @@
 {
-  "name": "@jie-cli/models",
+  "name": "@jie-cli/get-npm-info",
   "version": "0.0.15",
   "description": "> TODO: description",
   "author": "liuzhijie1 <572890972@qq.com>",
   "homepage": "https://github.com/liuzhijie1/jie-cli#readme",
   "license": "ISC",
-  "main": "lib/models.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -21,10 +21,9 @@
     "url": "git+https://github.com/liuzhijie1/jie-cli.git"
   },
   "scripts": {
-    "test": "node ./__tests__/models.test.js"
+    "test": "node ./__tests__/get-npm-info.test.js"
   },
   "bugs": {
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
-  },
-  "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c"
+  }
 }

@@ -22,14 +22,23 @@
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
-  "gitHead": "a4e6668caf003c1cc33eb0a7d8faa17a23aaa3b6",
+  "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c",
   "dependencies": {
     "@jie-cli/commands": "file:../../../commands",
     "@jie-cli/log": "file:../../../log",
     "@jie-cli/models": "file:../../../models",
     "@jie-cli/utils": "file:../../../utils",
+    "@jie-cli/get-npm-info": "file:../../../get-npm-info",
+    "colors": "^1.4.0",
     "dedent": "^1.5.1",
+    "dotenv": "^16.3.1",
     "import-local": "^3.1.0",
-    "npmlog": "^7.0.1"
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
+    "npmlog": "^7.0.1",
+    "path-exists": "^4.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.5.4",
+    "user-home": "^2.0.0"
   }
 }
