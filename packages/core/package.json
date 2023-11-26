@@ -1,6 +1,6 @@
 {
   "name": "@jie-cli/core",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "> TODO: description",
   "author": "liujie <572890972@qq.com>",
   "homepage": "",
@@ -25,10 +25,10 @@
   "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c",
   "dependencies": {
     "@jie-cli/commands": "file:../../../commands",
+    "@jie-cli/get-npm-info": "file:../../../get-npm-info",
     "@jie-cli/log": "file:../../../log",
     "@jie-cli/models": "file:../../../models",
     "@jie-cli/utils": "file:../../../utils",
-    "@jie-cli/get-npm-info": "file:../../../get-npm-info",
     "colors": "^1.4.0",
     "dedent": "^1.5.1",
     "dotenv": "^16.3.1",
