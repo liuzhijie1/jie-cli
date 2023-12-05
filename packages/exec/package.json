@@ -1,5 +1,5 @@
 {
-  "name": "@jie-cli/commands",
+  "name": "@jie-cli/exec",
   "version": "0.0.16",
   "description": "> TODO: description",
   "author": "liuzhijie1 <572890972@qq.com>",
@@ -21,10 +21,13 @@
     "url": "git+https://github.com/liuzhijie1/jie-cli.git"
   },
   "scripts": {
-    "test": "node ./__tests__/commands.test.js"
+    "test": "node ./__tests__/exec.test.js"
   },
   "bugs": {
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
   },
-  "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c"
+  "dependencies": {
+    "@jie-cli/models": "file:../../../models",
+    "@jie-cli/log": "file:../../../log"
+  }
 }

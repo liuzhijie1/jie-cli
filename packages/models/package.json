@@ -5,7 +5,7 @@
   "author": "liuzhijie1 <572890972@qq.com>",
   "homepage": "https://github.com/liuzhijie1/jie-cli#readme",
   "license": "ISC",
-  "main": "lib/models.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -25,6 +25,9 @@
   },
   "bugs": {
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
+  },
+  "dependencies": {
+    "@jie-cli/utils": "file:../../../utils"
   },
   "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c"
 }

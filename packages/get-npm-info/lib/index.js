@@ -6,12 +6,12 @@ const semver = require('semver')
 
 
 function getNpmInfo(npmName, registry) {
-  console.log('getNpmInfo', npmName)
+  // console.log('getNpmInfo', npmName)
   if (!npmName) return null;
   const registryUrl = registry || getDefaultRegistry();
   const npmInfoUrl = urljoin(registryUrl, npmName);
 
-  console.log(npmInfoUrl)
+  // console.log(npmInfoUrl)
 
   return axios.get(npmInfoUrl).then(res => {
     // console.log(res)
@@ -49,9 +49,9 @@ function getNpmSemverVersions(baseVersion, versions) {
 
 async function getNpmSemverVersion(baseVersion, npmName, registry) {
   const versions = await getNpmVersions(npmName, registry);
-  console.log('111', baseVersion, versions)
+  // console.log('111', baseVersion, versions)
   const newVersions = await getNpmSemverVersions(baseVersion, versions);
-  console.log(newVersions)
+  // console.log(newVersions)
   if (newVersions && newVersions.length > 0) {
     return newVersions[0];
   }
