@@ -2,7 +2,9 @@
   "name": "root",
   "private": false,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/commands/*",
+    "packages/models/*"
   ],
   "devDependencies": {
     "lerna": "^7.4.2"

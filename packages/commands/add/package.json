@@ -1,5 +1,5 @@
 {
-  "name": "@jie-cli/models",
+  "name": "@jie-cli/add",
   "version": "0.0.16",
   "description": "> TODO: description",
   "author": "liuzhijie1 <572890972@qq.com>",
@@ -21,14 +21,9 @@
     "url": "git+https://github.com/liuzhijie1/jie-cli.git"
   },
   "scripts": {
-    "test": "node ./__tests__/models.test.js"
+    "test": "node ./__tests__/add.test.js"
   },
   "bugs": {
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
-  },
-  "dependencies": {
-    "@jie-cli/utils": "file:../../../utils",
-    "pkg-dir": "^5.0.0"
-  },
-  "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c"
+  }
 }
