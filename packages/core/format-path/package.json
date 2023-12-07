@@ -1,5 +1,5 @@
 {
-  "name": "@jie-cli/exec",
+  "name": "@jie-cli/format-path",
   "version": "0.0.17",
   "description": "> TODO: description",
   "author": "liuzhijie1 <572890972@qq.com>",
@@ -21,13 +21,9 @@
     "url": "git+https://github.com/liuzhijie1/jie-cli.git"
   },
   "scripts": {
-    "test": "node ./__tests__/exec.test.js"
+    "test": "node ./__tests__/format-path.test.js"
   },
   "bugs": {
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
-  },
-  "dependencies": {
-    "@jie-cli/log": "file:../../../log",
-    "@jie-cli/package": "file:../../../models/package"
   }
 }

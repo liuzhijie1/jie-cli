@@ -4,7 +4,9 @@
   "workspaces": [
     "packages/*",
     "packages/commands/*",
-    "packages/models/*"
+    "packages/models/*",
+    "packages/utils/*",
+    "packages/core/*"
   ],
   "devDependencies": {
     "lerna": "^7.4.2"

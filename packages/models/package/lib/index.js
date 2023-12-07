@@ -23,6 +23,9 @@ class Package {
     if (dir) {
       const pkgFile = require(path.resolve(dir, 'package.json')) 
       console.log(pkgFile)
+      if (pkgFile && pkgFile.main) {
+        return path.resolve(dir, pkgFile.main)
+      }
     }
     return null;
   }
