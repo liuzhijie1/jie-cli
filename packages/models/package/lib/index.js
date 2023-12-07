@@ -3,6 +3,7 @@
 const pkgDir = require('pkg-dir').sync
 const path = require('path')
 const { isObject } = require('@jie-cli/utils')
+const formatPath = require('@jie-cli/format-path')
 
 class Package {
   constructor(options = {}) {
@@ -21,10 +22,11 @@ class Package {
     const dir = pkgDir(this.targetPath);
     console.log(dir)
     if (dir) {
-      const pkgFile = require(path.resolve(dir, 'package.json')) 
+      const pkgFile = require(path.resolve(dir, 'package.json'))
       console.log(pkgFile)
       if (pkgFile && pkgFile.main) {
-        return path.resolve(dir, pkgFile.main)
+        // 路径的兼容 针对操作系统
+        return formatPath(path.resolve(dir, pkgFile.main))
       }
     }
     return null;
