@@ -1,6 +1,6 @@
 {
   "name": "@jie-cli/exec",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "> TODO: description",
   "author": "liuzhijie1 <572890972@qq.com>",
   "homepage": "https://github.com/liuzhijie1/jie-cli#readme",
@@ -27,7 +27,7 @@
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
   },
   "dependencies": {
-    "@jie-cli/models": "file:../../../models",
-    "@jie-cli/log": "file:../../../log"
+    "@jie-cli/log": "file:../../../log",
+    "@jie-cli/models": "file:../../../models"
   }
 }
