@@ -8,7 +8,7 @@ const SETTINGS = {
 }
 
 function exec() {
-  const targetPath = process.env.CLI_TARGET_PATH
+  let targetPath = process.env.CLI_TARGET_PATH
   const homePath = process.env.CLI_HOME_PATH
   log.verbose('targetPath', targetPath)
   log.verbose('homePath', homePath)
@@ -24,12 +24,18 @@ function exec() {
   console.log(cmbObj)
   console.log(command.name())
 
+  if (!targetPath) {
+    // 生产缓存路径
+    targetPath = ''
+  }
+
   const pkg = new Package({
     targetPath,
     packageName,
     packageVersion
   });
   console.log(pkg)
+  console.log(pkg.getRootFilePath());
   // console.log('exec')
 }
 
