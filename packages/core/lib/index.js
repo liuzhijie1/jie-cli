@@ -9,8 +9,8 @@ const commander = require('commander')
 
 const utils = require('@jie-cli/utils')
 const log = require('@jie-cli/log')
-const { initCommand } = require('@jie-cli/commands')
-const models = require('@jie-cli/models')
+const { initCommand } = require('@jie-cli/init')
+const models = require('@jie-cli/package')
 const exec = require('@jie-cli/exec')
 
 const pkg = require('../package.json')

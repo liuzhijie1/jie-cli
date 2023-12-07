@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "@jie-cli/log": "file:../../../log",
-    "@jie-cli/models": "file:../../../models"
+    "@jie-cli/package": "file:../../../models/package"
   }
 }

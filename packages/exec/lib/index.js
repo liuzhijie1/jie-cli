@@ -1,6 +1,6 @@
 'use strict';
 
-const Package = require('@jie-cli/models')
+const Package = require('@jie-cli/package')
 const log = require('@jie-cli/log')
 
 const SETTINGS = {
