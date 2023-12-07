@@ -27,8 +27,9 @@
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
   },
   "dependencies": {
-    "@jie-cli/utils": "file:../../../../utils/utils",
     "@jie-cli/format-path": "file:../../../../utils/format-path",
+    "@jie-cli/utils": "file:../../../../utils/utils",
+    "npminstall": "^7.11.1",
     "pkg-dir": "^5.0.0"
   },
   "gitHead": "aed35387ed3f11981f27f9e572f79648bea6155c"

@@ -2,6 +2,7 @@
 
 const pkgDir = require('pkg-dir').sync
 const path = require('path')
+const npminstall = require('npminstall')
 const { isObject } = require('@jie-cli/utils')
 const formatPath = require('@jie-cli/format-path')
 
@@ -17,6 +18,9 @@ class Package {
     this.packageVersion = options.packageVersion;
   }
 
+  install() {
+    
+  }
 
   getRootFilePath() {
     const dir = pkgDir(this.targetPath);
