@@ -29,6 +29,7 @@
   "dependencies": {
     "@jie-cli/format-path": "file:../../../../utils/format-path",
     "@jie-cli/utils": "file:../../../../utils/utils",
+    "@jie-cli/get-npm-info": "file:../../../../utils/get-npm-info",
     "npminstall": "^7.11.1",
     "pkg-dir": "^5.0.0"
   },

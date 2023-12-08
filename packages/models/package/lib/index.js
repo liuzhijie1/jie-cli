@@ -5,6 +5,7 @@ const path = require('path')
 const npminstall = require('npminstall')
 const { isObject } = require('@jie-cli/utils')
 const formatPath = require('@jie-cli/format-path')
+const { getDefaultRegistry } = require('@jie-cli/get-npm-info')
 
 class Package {
   constructor(options = {}) {
@@ -13,12 +14,26 @@ class Package {
       throw new Error('Package类的options参数不能为空')
     }
     this.targetPath = options.targetPath;
-    this.storePath = options.storePath;
+    this.storeDir = options.storeDir;
     this.packageName = options.packageName;
     this.packageVersion = options.packageVersion;
   }
 
   install() {
+    npminstall({
+      root: this.targetPath,
+      storeDir: this.storeDir,
+      registry: getDefaultRegistry(true),
+      pkgs: [
+        {
+          name: this.packageName,
+          version: this.packageVersion
+        }
+      ]
+    })
+  }
+
+  exists() {
     
   }
 
