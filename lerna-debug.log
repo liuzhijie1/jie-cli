@@ -7,12 +7,12 @@
 1 notice cli v7.4.2
 2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
 3 verbose rootPath D:\Project\Learn\webimooc\jie-cli
-4 verbose session 6fa50e1ee8a823e9
+4 verbose session 900f86622546994f
 5 verbose user-agent lerna/7.4.2/node@v16.13.0+x64 (win32)
 6 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '7.4.2' }
 7 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
 8 verbose rootPath D:\Project\Learn\webimooc\jie-cli
-9 info current version 0.0.19
+9 info current version 0.0.20
 10 silly isAnythingCommitted
 11 verbose isAnythingCommitted 1
 12 silly getCurrentBranch
@@ -22,432 +22,427 @@
 16 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 0
 17 silly hasTags
 18 verbose hasTags true
-19 silly git-describe.sync "v0.0.19-4-g567510f" => {"lastTagName":"v0.0.19","lastVersion":"v0.0.19","refCount":"4","sha":"567510f","isDirty":false}
-20 info Looking for changed packages since v0.0.19
+19 silly git-describe.sync "v0.0.20-1-g7aea784" => {"lastTagName":"v0.0.20","lastVersion":"v0.0.20","refCount":"1","sha":"7aea784","isDirty":false}
+20 info Looking for changed packages since v0.0.20
 21 silly checking diff packages/commands/add
-22 silly no diff found in @jie-cli/add
-23 silly checking diff packages/commands/init
-24 silly found diff in packages/commands/init/lib/index.js
-24 silly found diff in packages/commands/init/libs/init/index.js
-25 verbose filtered diff [
-25 verbose filtered diff   'packages/commands/init/lib/index.js',
-25 verbose filtered diff   'packages/commands/init/libs/init/index.js'
-25 verbose filtered diff ]
-26 silly checking diff packages/core/cli
-27 silly found diff in packages/core/cli/lib/index.js
-27 silly found diff in packages/core/cli/package.json
-28 verbose filtered diff [ 'packages/core/cli/lib/index.js', 'packages/core/cli/package.json' ]
-29 silly checking diff packages/core/exec
-30 silly found diff in packages/core/exec/lib/index.js
-31 verbose filtered diff [ 'packages/core/exec/lib/index.js' ]
-32 silly checking diff packages/models/package
-33 silly found diff in packages/models/package/lib/index.js
-33 silly found diff in packages/models/package/package-lock.json
-33 silly found diff in packages/models/package/package.json
-34 verbose filtered diff [
-34 verbose filtered diff   'packages/models/package/lib/index.js',
-34 verbose filtered diff   'packages/models/package/package-lock.json',
-34 verbose filtered diff   'packages/models/package/package.json'
-34 verbose filtered diff ]
-35 silly checking diff packages/utils/format-path
-36 silly found diff in packages/utils/format-path/lib/index.js
-37 verbose filtered diff [ 'packages/utils/format-path/lib/index.js' ]
-38 silly checking diff packages/utils/get-npm-info
-39 silly found diff in packages/utils/get-npm-info/lib/index.js
-40 verbose filtered diff [ 'packages/utils/get-npm-info/lib/index.js' ]
-41 silly checking diff packages/utils/log
-42 silly no diff found in @jie-cli/log
-43 silly checking diff packages/utils/utils
-44 silly no diff found in @jie-cli/utils
-45 verbose updated @jie-cli/init
-46 verbose updated @jie-cli/core
-47 verbose updated @jie-cli/exec
-48 verbose updated @jie-cli/package
-49 verbose updated @jie-cli/format-path
-50 verbose updated @jie-cli/get-npm-info
-51 verbose git-describe undefined => "v0.0.19-4-g567510f"
-52 silly git-describe parsed => {"lastTagName":"v0.0.19","lastVersion":"v0.0.19","refCount":"4","sha":"567510f","isDirty":false}
-53 info execute Skipping releases
-54 silly lifecycle No script for "preversion" in "root", continuing
-55 silly lifecycle No script for "preversion" in "@jie-cli/add", continuing
-56 silly lifecycle No script for "preversion" in "@jie-cli/init", continuing
-57 silly lifecycle No script for "preversion" in "@jie-cli/core", continuing
-58 silly lifecycle No script for "preversion" in "@jie-cli/exec", continuing
-59 silly lifecycle No script for "preversion" in "@jie-cli/package", continuing
-60 silly lifecycle No script for "preversion" in "@jie-cli/format-path", continuing
-61 silly lifecycle No script for "preversion" in "@jie-cli/get-npm-info", continuing
-62 silly lifecycle No script for "preversion" in "@jie-cli/log", continuing
-63 silly lifecycle No script for "preversion" in "@jie-cli/utils", continuing
-64 verbose version @jie-cli/add has no lockfile. Skipping lockfile update.
-65 verbose version @jie-cli/init has no lockfile. Skipping lockfile update.
-66 verbose version @jie-cli/core has no lockfile. Skipping lockfile update.
-67 verbose version @jie-cli/exec has no lockfile. Skipping lockfile update.
-68 verbose version @jie-cli/get-npm-info has no lockfile. Skipping lockfile update.
-69 verbose version @jie-cli/format-path has no lockfile. Skipping lockfile update.
-70 verbose version @jie-cli/utils has no lockfile. Skipping lockfile update.
-71 verbose version @jie-cli/log has no lockfile. Skipping lockfile update.
-72 silly lifecycle No script for "version" in "@jie-cli/add", continuing
-73 silly lifecycle No script for "version" in "@jie-cli/core", continuing
-74 silly lifecycle No script for "version" in "@jie-cli/package", continuing
-75 silly lifecycle No script for "version" in "@jie-cli/init", continuing
-76 silly lifecycle No script for "version" in "@jie-cli/exec", continuing
-77 silly lifecycle No script for "version" in "@jie-cli/log", continuing
-78 silly lifecycle No script for "version" in "@jie-cli/get-npm-info", continuing
-79 silly lifecycle No script for "version" in "@jie-cli/utils", continuing
-80 silly lifecycle No script for "version" in "@jie-cli/format-path", continuing
-81 silly lifecycle No script for "version" in "root", continuing
-82 verbose version Updating root package-lock.json
-83 silly gitAdd [
-83 silly gitAdd   'packages/commands/add/package.json',
-83 silly gitAdd   'packages/core/cli/package.json',
-83 silly gitAdd   'packages/models/package/package.json',
-83 silly gitAdd   'packages/models/package/package-lock.json',
-83 silly gitAdd   'packages/commands/init/package.json',
-83 silly gitAdd   'packages/core/exec/package.json',
-83 silly gitAdd   'packages/utils/log/package.json',
-83 silly gitAdd   'packages/utils/get-npm-info/package.json',
-83 silly gitAdd   'packages/utils/utils/package.json',
-83 silly gitAdd   'packages/utils/format-path/package.json',
-83 silly gitAdd   'lerna.json',
-83 silly gitAdd   'package-lock.json'
-83 silly gitAdd ]
-84 silly gitCommit v0.0.20
-85 verbose git [ 'commit', '-m', 'v0.0.20' ]
-86 silly gitTag v0.0.20 git tag %s -m %s
-87 verbose git [ 'tag', 'v0.0.20', '-m', 'v0.0.20' ]
-88 silly lifecycle No script for "postversion" in "@jie-cli/add", continuing
-89 silly lifecycle No script for "postversion" in "@jie-cli/init", continuing
-90 silly lifecycle No script for "postversion" in "@jie-cli/core", continuing
-91 silly lifecycle No script for "postversion" in "@jie-cli/exec", continuing
-92 silly lifecycle No script for "postversion" in "@jie-cli/package", continuing
-93 silly lifecycle No script for "postversion" in "@jie-cli/format-path", continuing
-94 silly lifecycle No script for "postversion" in "@jie-cli/get-npm-info", continuing
-95 silly lifecycle No script for "postversion" in "@jie-cli/log", continuing
-96 silly lifecycle No script for "postversion" in "@jie-cli/utils", continuing
-97 silly lifecycle No script for "postversion" in "root", continuing
-98 info git Pushing tags...
-99 silly gitPush origin main
-100 info publish Publishing packages to npm...
-101 warn ENOLICENSE Packages @jie-cli/add, @jie-cli/init, @jie-cli/core, @jie-cli/exec, @jie-cli/package, @jie-cli/format-path, @jie-cli/get-npm-info, @jie-cli/log, and @jie-cli/utils are missing a license.
-101 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
-101 warn ENOLICENSE See https://choosealicense.com for additional guidance.
-102 silly getCurrentSHA
-103 verbose getCurrentSHA 922aafd4d6cac7e7aed099b7fa36e038162f632b
-104 silly lifecycle No script for "prepublish" in "root", continuing
-105 silly lifecycle No script for "prepare" in "root", continuing
-106 silly lifecycle No script for "prepublishOnly" in "root", continuing
-107 silly lifecycle No script for "prepack" in "root", continuing
-108 verbose pack-directory packages\commands\add
-109 verbose pack-directory packages\commands\init
-110 verbose pack-directory packages\core\cli
-111 verbose pack-directory packages\core\exec
-112 verbose pack-directory packages\models\package
-113 verbose pack-directory packages\utils\format-path
-114 verbose pack-directory packages\utils\get-npm-info
-115 verbose pack-directory packages\utils\log
-116 verbose pack-directory packages\utils\utils
-117 silly lifecycle No script for "prepublish" in "@jie-cli/add", continuing
-118 silly lifecycle No script for "prepublish" in "@jie-cli/init", continuing
-119 silly lifecycle No script for "prepublish" in "@jie-cli/core", continuing
-120 silly lifecycle No script for "prepublish" in "@jie-cli/exec", continuing
-121 silly lifecycle No script for "prepublish" in "@jie-cli/package", continuing
-122 silly lifecycle No script for "prepublish" in "@jie-cli/format-path", continuing
-123 silly lifecycle No script for "prepublish" in "@jie-cli/get-npm-info", continuing
-124 silly lifecycle No script for "prepublish" in "@jie-cli/log", continuing
-125 silly lifecycle No script for "prepublish" in "@jie-cli/utils", continuing
-126 silly lifecycle No script for "prepare" in "@jie-cli/add", continuing
-127 silly lifecycle No script for "prepare" in "@jie-cli/init", continuing
-128 silly lifecycle No script for "prepare" in "@jie-cli/core", continuing
-129 silly lifecycle No script for "prepare" in "@jie-cli/exec", continuing
-130 silly lifecycle No script for "prepare" in "@jie-cli/package", continuing
-131 silly lifecycle No script for "prepare" in "@jie-cli/format-path", continuing
-132 silly lifecycle No script for "prepare" in "@jie-cli/get-npm-info", continuing
-133 silly lifecycle No script for "prepare" in "@jie-cli/log", continuing
-134 silly lifecycle No script for "prepare" in "@jie-cli/utils", continuing
-135 silly lifecycle No script for "prepublishOnly" in "@jie-cli/add", continuing
-136 silly lifecycle No script for "prepublishOnly" in "@jie-cli/exec", continuing
-137 silly lifecycle No script for "prepublishOnly" in "@jie-cli/core", continuing
-138 silly lifecycle No script for "prepublishOnly" in "@jie-cli/init", continuing
-139 silly lifecycle No script for "prepublishOnly" in "@jie-cli/log", continuing
-140 silly lifecycle No script for "prepublishOnly" in "@jie-cli/format-path", continuing
-141 silly lifecycle No script for "prepublishOnly" in "@jie-cli/package", continuing
-142 silly lifecycle No script for "prepublishOnly" in "@jie-cli/get-npm-info", continuing
-143 silly lifecycle No script for "prepublishOnly" in "@jie-cli/utils", continuing
-144 silly lifecycle No script for "prepack" in "@jie-cli/add", continuing
-145 silly lifecycle No script for "prepack" in "@jie-cli/log", continuing
-146 silly lifecycle No script for "prepack" in "@jie-cli/core", continuing
-147 silly lifecycle No script for "prepack" in "@jie-cli/init", continuing
-148 silly lifecycle No script for "prepack" in "@jie-cli/exec", continuing
-149 silly lifecycle No script for "prepack" in "@jie-cli/package", continuing
-150 silly lifecycle No script for "prepack" in "@jie-cli/format-path", continuing
-151 silly lifecycle No script for "prepack" in "@jie-cli/get-npm-info", continuing
-152 silly lifecycle No script for "prepack" in "@jie-cli/utils", continuing
-153 silly lifecycle No script for "postpack" in "@jie-cli/add", continuing
-154 verbose packed packages\commands\add
-155 silly lifecycle No script for "postpack" in "@jie-cli/exec", continuing
-156 verbose packed packages\core\exec
-157 silly lifecycle No script for "postpack" in "@jie-cli/init", continuing
-158 verbose packed packages\commands\init
-159 silly lifecycle No script for "postpack" in "@jie-cli/package", continuing
-160 verbose packed packages\models\package
-161 silly lifecycle No script for "postpack" in "@jie-cli/log", continuing
-162 verbose packed packages\utils\log
-163 silly lifecycle No script for "postpack" in "@jie-cli/format-path", continuing
-164 verbose packed packages\utils\format-path
-165 silly lifecycle No script for "postpack" in "@jie-cli/utils", continuing
-166 verbose packed packages\utils\utils
-167 silly lifecycle No script for "postpack" in "@jie-cli/get-npm-info", continuing
-168 verbose packed packages\utils\get-npm-info
-169 silly lifecycle No script for "postpack" in "@jie-cli/core", continuing
-170 verbose packed packages\core\cli
-171 silly lifecycle No script for "postpack" in "root", continuing
-172 verbose publish @jie-cli/add
-173 verbose publish @jie-cli/init
-174 verbose publish @jie-cli/core
-175 verbose publish @jie-cli/exec
-176 verbose publish @jie-cli/package
-177 verbose publish @jie-cli/format-path
-178 verbose publish @jie-cli/get-npm-info
-179 verbose publish @jie-cli/log
-180 verbose publish @jie-cli/utils
-181 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.28.34:443
-181 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-181 silly     at ClientRequest.emit (node:events:390:28)
-181 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-181 silly     at TLSSocket.emit (node:events:402:35)
-181 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-181 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-181 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-181 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.28.34:443
-181 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-181 silly     at ClientRequest.emit (node:events:390:28)
-181 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-181 silly     at TLSSocket.emit (node:events:402:35)
-181 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-181 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-181 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-181 silly   code: 'ETIMEDOUT',
-181 silly   errno: 'ETIMEDOUT',
-181 silly   syscall: 'connect',
-181 silly   address: '104.16.28.34',
-181 silly   port: 443,
-181 silly   type: 'system'
-181 silly }
-182 warn notice Package failed to publish: @jie-cli/format-path
-183 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.28.34:443
-184 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-185 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2finit failed, reason: connect ETIMEDOUT 104.16.28.34:443
-185 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-185 silly     at ClientRequest.emit (node:events:390:28)
-185 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-185 silly     at TLSSocket.emit (node:events:402:35)
-185 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-185 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-185 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-185 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2finit failed, reason: connect ETIMEDOUT 104.16.28.34:443
-185 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-185 silly     at ClientRequest.emit (node:events:390:28)
-185 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-185 silly     at TLSSocket.emit (node:events:402:35)
-185 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-185 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-185 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-185 silly   code: 'ETIMEDOUT',
-185 silly   errno: 'ETIMEDOUT',
-185 silly   syscall: 'connect',
-185 silly   address: '104.16.28.34',
-185 silly   port: 443,
-185 silly   type: 'system'
-185 silly }
-186 warn notice Package failed to publish: @jie-cli/init
-187 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2finit failed, reason: connect ETIMEDOUT 104.16.28.34:443
-188 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-189 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fcore failed, reason: connect ETIMEDOUT 104.16.28.34:443
-189 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-189 silly     at ClientRequest.emit (node:events:390:28)
-189 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-189 silly     at TLSSocket.emit (node:events:402:35)
-189 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-189 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-189 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-189 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fcore failed, reason: connect ETIMEDOUT 104.16.28.34:443
-189 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-189 silly     at ClientRequest.emit (node:events:390:28)
-189 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-189 silly     at TLSSocket.emit (node:events:402:35)
-189 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-189 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-189 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-189 silly   code: 'ETIMEDOUT',
-189 silly   errno: 'ETIMEDOUT',
-189 silly   syscall: 'connect',
-189 silly   address: '104.16.28.34',
-189 silly   port: 443,
-189 silly   type: 'system'
-189 silly }
-190 warn notice Package failed to publish: @jie-cli/core
-191 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fcore failed, reason: connect ETIMEDOUT 104.16.28.34:443
-192 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-193 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.28.34:443
-193 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-193 silly     at ClientRequest.emit (node:events:390:28)
-193 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-193 silly     at TLSSocket.emit (node:events:402:35)
-193 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-193 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-193 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-193 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.28.34:443
-193 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-193 silly     at ClientRequest.emit (node:events:390:28)
-193 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-193 silly     at TLSSocket.emit (node:events:402:35)
-193 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-193 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-193 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-193 silly   code: 'ETIMEDOUT',
-193 silly   errno: 'ETIMEDOUT',
-193 silly   syscall: 'connect',
-193 silly   address: '104.16.28.34',
-193 silly   port: 443,
-193 silly   type: 'system'
-193 silly }
-194 warn notice Package failed to publish: @jie-cli/package
-195 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.28.34:443
-196 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-197 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fget-npm-info failed, reason: connect ETIMEDOUT 104.16.28.34:443
-197 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-197 silly     at ClientRequest.emit (node:events:390:28)
-197 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-197 silly     at TLSSocket.emit (node:events:402:35)
-197 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-197 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-197 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-197 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fget-npm-info failed, reason: connect ETIMEDOUT 104.16.28.34:443
-197 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-197 silly     at ClientRequest.emit (node:events:390:28)
-197 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-197 silly     at TLSSocket.emit (node:events:402:35)
-197 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-197 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-197 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-197 silly   code: 'ETIMEDOUT',
-197 silly   errno: 'ETIMEDOUT',
-197 silly   syscall: 'connect',
-197 silly   address: '104.16.28.34',
-197 silly   port: 443,
-197 silly   type: 'system'
-197 silly }
-198 warn notice Package failed to publish: @jie-cli/get-npm-info
-199 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fget-npm-info failed, reason: connect ETIMEDOUT 104.16.28.34:443
-200 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-201 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fadd failed, reason: connect ETIMEDOUT 104.16.28.34:443
-201 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-201 silly     at ClientRequest.emit (node:events:390:28)
-201 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-201 silly     at TLSSocket.emit (node:events:402:35)
-201 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-201 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-201 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-201 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fadd failed, reason: connect ETIMEDOUT 104.16.28.34:443
-201 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-201 silly     at ClientRequest.emit (node:events:390:28)
-201 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-201 silly     at TLSSocket.emit (node:events:402:35)
-201 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-201 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-201 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-201 silly   code: 'ETIMEDOUT',
-201 silly   errno: 'ETIMEDOUT',
-201 silly   syscall: 'connect',
-201 silly   address: '104.16.28.34',
-201 silly   port: 443,
-201 silly   type: 'system'
-201 silly }
-202 warn notice Package failed to publish: @jie-cli/add
-203 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fadd failed, reason: connect ETIMEDOUT 104.16.28.34:443
-204 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-205 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2futils failed, reason: connect ETIMEDOUT 104.16.28.34:443
-205 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-205 silly     at ClientRequest.emit (node:events:390:28)
-205 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-205 silly     at TLSSocket.emit (node:events:402:35)
-205 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-205 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-205 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-205 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2futils failed, reason: connect ETIMEDOUT 104.16.28.34:443
-205 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-205 silly     at ClientRequest.emit (node:events:390:28)
-205 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-205 silly     at TLSSocket.emit (node:events:402:35)
-205 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-205 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-205 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-205 silly   code: 'ETIMEDOUT',
-205 silly   errno: 'ETIMEDOUT',
-205 silly   syscall: 'connect',
-205 silly   address: '104.16.28.34',
-205 silly   port: 443,
-205 silly   type: 'system'
-205 silly }
-206 warn notice Package failed to publish: @jie-cli/utils
-207 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2futils failed, reason: connect ETIMEDOUT 104.16.28.34:443
-208 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-209 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fexec failed, reason: connect ETIMEDOUT 104.16.28.34:443
-209 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-209 silly     at ClientRequest.emit (node:events:390:28)
-209 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-209 silly     at TLSSocket.emit (node:events:402:35)
-209 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-209 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-209 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-209 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fexec failed, reason: connect ETIMEDOUT 104.16.28.34:443
-209 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-209 silly     at ClientRequest.emit (node:events:390:28)
-209 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-209 silly     at TLSSocket.emit (node:events:402:35)
-209 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-209 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-209 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-209 silly   code: 'ETIMEDOUT',
-209 silly   errno: 'ETIMEDOUT',
-209 silly   syscall: 'connect',
-209 silly   address: '104.16.28.34',
-209 silly   port: 443,
-209 silly   type: 'system'
-209 silly }
-210 warn notice Package failed to publish: @jie-cli/exec
-211 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fexec failed, reason: connect ETIMEDOUT 104.16.28.34:443
-212 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-213 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2flog failed, reason: connect ETIMEDOUT 104.16.28.34:443
-213 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-213 silly     at ClientRequest.emit (node:events:390:28)
-213 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-213 silly     at TLSSocket.emit (node:events:402:35)
-213 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-213 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-213 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
-213 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2flog failed, reason: connect ETIMEDOUT 104.16.28.34:443
-213 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-213 silly     at ClientRequest.emit (node:events:390:28)
-213 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-213 silly     at TLSSocket.emit (node:events:402:35)
-213 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
-213 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
-213 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
-213 silly   code: 'ETIMEDOUT',
-213 silly   errno: 'ETIMEDOUT',
-213 silly   syscall: 'connect',
-213 silly   address: '104.16.28.34',
-213 silly   port: 443,
-213 silly   type: 'system'
-213 silly }
-214 warn notice Package failed to publish: @jie-cli/log
-215 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2flog failed, reason: connect ETIMEDOUT 104.16.28.34:443
-216 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
-217 error FetchError: request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.28.34:443
-217 error     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
-217 error     at ClientRequest.emit (node:events:390:28)
-217 error     at TLSSocket.socketErrorListener (node:_http_client:447:9)
-217 error     at TLSSocket.emit (node:events:402:35)
-217 error     at emitErrorNT (node:internal/streams/destroy:157:8)
-217 error     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+22 silly found diff in packages/commands/add/package.json
+23 verbose filtered diff [ 'packages/commands/add/package.json' ]
+24 silly checking diff packages/commands/init
+25 silly found diff in packages/commands/init/package.json
+26 verbose filtered diff [ 'packages/commands/init/package.json' ]
+27 silly checking diff packages/core/cli
+28 silly found diff in packages/core/cli/package.json
+29 verbose filtered diff [ 'packages/core/cli/package.json' ]
+30 silly checking diff packages/core/exec
+31 silly found diff in packages/core/exec/package.json
+32 verbose filtered diff [ 'packages/core/exec/package.json' ]
+33 silly checking diff packages/models/package
+34 silly found diff in packages/models/package/package.json
+35 verbose filtered diff [ 'packages/models/package/package.json' ]
+36 silly checking diff packages/utils/format-path
+37 silly found diff in packages/utils/format-path/package.json
+38 verbose filtered diff [ 'packages/utils/format-path/package.json' ]
+39 silly checking diff packages/utils/get-npm-info
+40 silly found diff in packages/utils/get-npm-info/package.json
+41 verbose filtered diff [ 'packages/utils/get-npm-info/package.json' ]
+42 silly checking diff packages/utils/log
+43 silly found diff in packages/utils/log/package.json
+44 verbose filtered diff [ 'packages/utils/log/package.json' ]
+45 silly checking diff packages/utils/utils
+46 silly found diff in packages/utils/utils/package.json
+47 verbose filtered diff [ 'packages/utils/utils/package.json' ]
+48 verbose updated @jie-cli/add
+49 verbose updated @jie-cli/init
+50 verbose updated @jie-cli/core
+51 verbose updated @jie-cli/exec
+52 verbose updated @jie-cli/package
+53 verbose updated @jie-cli/format-path
+54 verbose updated @jie-cli/get-npm-info
+55 verbose updated @jie-cli/log
+56 verbose updated @jie-cli/utils
+57 verbose git-describe undefined => "v0.0.20-1-g7aea784"
+58 silly git-describe parsed => {"lastTagName":"v0.0.20","lastVersion":"v0.0.20","refCount":"1","sha":"7aea784","isDirty":false}
+59 info execute Skipping releases
+60 silly lifecycle No script for "preversion" in "root", continuing
+61 silly lifecycle No script for "preversion" in "@jie-cli/add", continuing
+62 silly lifecycle No script for "preversion" in "@jie-cli/init", continuing
+63 silly lifecycle No script for "preversion" in "@jie-cli/core", continuing
+64 silly lifecycle No script for "preversion" in "@jie-cli/exec", continuing
+65 silly lifecycle No script for "preversion" in "@jie-cli/package", continuing
+66 silly lifecycle No script for "preversion" in "@jie-cli/format-path", continuing
+67 silly lifecycle No script for "preversion" in "@jie-cli/get-npm-info", continuing
+68 silly lifecycle No script for "preversion" in "@jie-cli/log", continuing
+69 silly lifecycle No script for "preversion" in "@jie-cli/utils", continuing
+70 verbose version @jie-cli/add has no lockfile. Skipping lockfile update.
+71 verbose version @jie-cli/init has no lockfile. Skipping lockfile update.
+72 verbose version @jie-cli/core has no lockfile. Skipping lockfile update.
+73 verbose version @jie-cli/log has no lockfile. Skipping lockfile update.
+74 verbose version @jie-cli/format-path has no lockfile. Skipping lockfile update.
+75 verbose version @jie-cli/exec has no lockfile. Skipping lockfile update.
+76 verbose version @jie-cli/utils has no lockfile. Skipping lockfile update.
+77 verbose version @jie-cli/get-npm-info has no lockfile. Skipping lockfile update.
+78 silly lifecycle No script for "version" in "@jie-cli/add", continuing
+79 silly lifecycle No script for "version" in "@jie-cli/package", continuing
+80 silly lifecycle No script for "version" in "@jie-cli/log", continuing
+81 silly lifecycle No script for "version" in "@jie-cli/exec", continuing
+82 silly lifecycle No script for "version" in "@jie-cli/init", continuing
+83 silly lifecycle No script for "version" in "@jie-cli/core", continuing
+84 silly lifecycle No script for "version" in "@jie-cli/utils", continuing
+85 silly lifecycle No script for "version" in "@jie-cli/get-npm-info", continuing
+86 silly lifecycle No script for "version" in "@jie-cli/format-path", continuing
+87 silly lifecycle No script for "version" in "root", continuing
+88 verbose version Updating root package-lock.json
+89 silly gitAdd [
+89 silly gitAdd   'packages/commands/add/package.json',
+89 silly gitAdd   'packages/models/package/package.json',
+89 silly gitAdd   'packages/models/package/package-lock.json',
+89 silly gitAdd   'packages/utils/log/package.json',
+89 silly gitAdd   'packages/core/exec/package.json',
+89 silly gitAdd   'packages/commands/init/package.json',
+89 silly gitAdd   'packages/core/cli/package.json',
+89 silly gitAdd   'packages/utils/utils/package.json',
+89 silly gitAdd   'packages/utils/get-npm-info/package.json',
+89 silly gitAdd   'packages/utils/format-path/package.json',
+89 silly gitAdd   'lerna.json',
+89 silly gitAdd   'package-lock.json'
+89 silly gitAdd ]
+90 silly gitCommit v0.0.21
+91 verbose git [ 'commit', '-m', 'v0.0.21' ]
+92 silly gitTag v0.0.21 git tag %s -m %s
+93 verbose git [ 'tag', 'v0.0.21', '-m', 'v0.0.21' ]
+94 silly lifecycle No script for "postversion" in "@jie-cli/add", continuing
+95 silly lifecycle No script for "postversion" in "@jie-cli/init", continuing
+96 silly lifecycle No script for "postversion" in "@jie-cli/core", continuing
+97 silly lifecycle No script for "postversion" in "@jie-cli/exec", continuing
+98 silly lifecycle No script for "postversion" in "@jie-cli/package", continuing
+99 silly lifecycle No script for "postversion" in "@jie-cli/format-path", continuing
+100 silly lifecycle No script for "postversion" in "@jie-cli/get-npm-info", continuing
+101 silly lifecycle No script for "postversion" in "@jie-cli/log", continuing
+102 silly lifecycle No script for "postversion" in "@jie-cli/utils", continuing
+103 silly lifecycle No script for "postversion" in "root", continuing
+104 info git Pushing tags...
+105 silly gitPush origin main
+106 info publish Publishing packages to npm...
+107 warn ENOLICENSE Packages @jie-cli/add, @jie-cli/init, @jie-cli/core, @jie-cli/exec, @jie-cli/package, @jie-cli/format-path, @jie-cli/get-npm-info, @jie-cli/log, and @jie-cli/utils are missing a license.
+107 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
+107 warn ENOLICENSE See https://choosealicense.com for additional guidance.
+108 silly getCurrentSHA
+109 verbose getCurrentSHA 5b0bfd6900ae3b807942dff4485fe7a448250f3f
+110 silly lifecycle No script for "prepublish" in "root", continuing
+111 silly lifecycle No script for "prepare" in "root", continuing
+112 silly lifecycle No script for "prepublishOnly" in "root", continuing
+113 silly lifecycle No script for "prepack" in "root", continuing
+114 verbose pack-directory packages\commands\add
+115 verbose pack-directory packages\commands\init
+116 verbose pack-directory packages\core\cli
+117 verbose pack-directory packages\core\exec
+118 verbose pack-directory packages\models\package
+119 verbose pack-directory packages\utils\format-path
+120 verbose pack-directory packages\utils\get-npm-info
+121 verbose pack-directory packages\utils\log
+122 verbose pack-directory packages\utils\utils
+123 silly lifecycle No script for "prepublish" in "@jie-cli/add", continuing
+124 silly lifecycle No script for "prepublish" in "@jie-cli/init", continuing
+125 silly lifecycle No script for "prepublish" in "@jie-cli/core", continuing
+126 silly lifecycle No script for "prepublish" in "@jie-cli/exec", continuing
+127 silly lifecycle No script for "prepublish" in "@jie-cli/package", continuing
+128 silly lifecycle No script for "prepublish" in "@jie-cli/format-path", continuing
+129 silly lifecycle No script for "prepublish" in "@jie-cli/get-npm-info", continuing
+130 silly lifecycle No script for "prepublish" in "@jie-cli/log", continuing
+131 silly lifecycle No script for "prepublish" in "@jie-cli/utils", continuing
+132 silly lifecycle No script for "prepare" in "@jie-cli/add", continuing
+133 silly lifecycle No script for "prepare" in "@jie-cli/init", continuing
+134 silly lifecycle No script for "prepare" in "@jie-cli/core", continuing
+135 silly lifecycle No script for "prepare" in "@jie-cli/exec", continuing
+136 silly lifecycle No script for "prepare" in "@jie-cli/package", continuing
+137 silly lifecycle No script for "prepare" in "@jie-cli/format-path", continuing
+138 silly lifecycle No script for "prepare" in "@jie-cli/get-npm-info", continuing
+139 silly lifecycle No script for "prepare" in "@jie-cli/log", continuing
+140 silly lifecycle No script for "prepare" in "@jie-cli/utils", continuing
+141 silly lifecycle No script for "prepublishOnly" in "@jie-cli/add", continuing
+142 silly lifecycle No script for "prepublishOnly" in "@jie-cli/package", continuing
+143 silly lifecycle No script for "prepublishOnly" in "@jie-cli/init", continuing
+144 silly lifecycle No script for "prepublishOnly" in "@jie-cli/exec", continuing
+145 silly lifecycle No script for "prepublishOnly" in "@jie-cli/core", continuing
+146 silly lifecycle No script for "prepublishOnly" in "@jie-cli/get-npm-info", continuing
+147 silly lifecycle No script for "prepublishOnly" in "@jie-cli/format-path", continuing
+148 silly lifecycle No script for "prepublishOnly" in "@jie-cli/log", continuing
+149 silly lifecycle No script for "prepublishOnly" in "@jie-cli/utils", continuing
+150 silly lifecycle No script for "prepack" in "@jie-cli/init", continuing
+151 silly lifecycle No script for "prepack" in "@jie-cli/add", continuing
+152 silly lifecycle No script for "prepack" in "@jie-cli/get-npm-info", continuing
+153 silly lifecycle No script for "prepack" in "@jie-cli/core", continuing
+154 silly lifecycle No script for "prepack" in "@jie-cli/exec", continuing
+155 silly lifecycle No script for "prepack" in "@jie-cli/package", continuing
+156 silly lifecycle No script for "prepack" in "@jie-cli/format-path", continuing
+157 silly lifecycle No script for "prepack" in "@jie-cli/utils", continuing
+158 silly lifecycle No script for "prepack" in "@jie-cli/log", continuing
+159 silly lifecycle No script for "postpack" in "@jie-cli/add", continuing
+160 verbose packed packages\commands\add
+161 silly lifecycle No script for "postpack" in "@jie-cli/exec", continuing
+162 verbose packed packages\core\exec
+163 silly lifecycle No script for "postpack" in "@jie-cli/init", continuing
+164 verbose packed packages\commands\init
+165 silly lifecycle No script for "postpack" in "@jie-cli/get-npm-info", continuing
+166 verbose packed packages\utils\get-npm-info
+167 silly lifecycle No script for "postpack" in "@jie-cli/format-path", continuing
+168 verbose packed packages\utils\format-path
+169 silly lifecycle No script for "postpack" in "@jie-cli/package", continuing
+170 verbose packed packages\models\package
+171 silly lifecycle No script for "postpack" in "@jie-cli/log", continuing
+172 verbose packed packages\utils\log
+173 silly lifecycle No script for "postpack" in "@jie-cli/utils", continuing
+174 verbose packed packages\utils\utils
+175 silly lifecycle No script for "postpack" in "@jie-cli/core", continuing
+176 verbose packed packages\core\cli
+177 silly lifecycle No script for "postpack" in "root", continuing
+178 verbose publish @jie-cli/add
+179 verbose publish @jie-cli/init
+180 verbose publish @jie-cli/core
+181 verbose publish @jie-cli/exec
+182 verbose publish @jie-cli/package
+183 verbose publish @jie-cli/format-path
+184 verbose publish @jie-cli/get-npm-info
+185 verbose publish @jie-cli/log
+186 verbose publish @jie-cli/utils
+187 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.2.35:443
+187 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+187 silly     at ClientRequest.emit (node:events:390:28)
+187 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+187 silly     at TLSSocket.emit (node:events:402:35)
+187 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+187 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+187 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+187 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.2.35:443
+187 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+187 silly     at ClientRequest.emit (node:events:390:28)
+187 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+187 silly     at TLSSocket.emit (node:events:402:35)
+187 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+187 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+187 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+187 silly   code: 'ETIMEDOUT',
+187 silly   errno: 'ETIMEDOUT',
+187 silly   syscall: 'connect',
+187 silly   address: '104.16.2.35',
+187 silly   port: 443,
+187 silly   type: 'system'
+187 silly }
+188 warn notice Package failed to publish: @jie-cli/package
+189 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.2.35:443
+190 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+191 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2flog failed, reason: connect ETIMEDOUT 104.16.2.35:443
+191 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+191 silly     at ClientRequest.emit (node:events:390:28)
+191 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+191 silly     at TLSSocket.emit (node:events:402:35)
+191 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+191 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+191 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+191 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2flog failed, reason: connect ETIMEDOUT 104.16.2.35:443
+191 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+191 silly     at ClientRequest.emit (node:events:390:28)
+191 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+191 silly     at TLSSocket.emit (node:events:402:35)
+191 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+191 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+191 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+191 silly   code: 'ETIMEDOUT',
+191 silly   errno: 'ETIMEDOUT',
+191 silly   syscall: 'connect',
+191 silly   address: '104.16.2.35',
+191 silly   port: 443,
+191 silly   type: 'system'
+191 silly }
+192 warn notice Package failed to publish: @jie-cli/log
+193 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2flog failed, reason: connect ETIMEDOUT 104.16.2.35:443
+194 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+195 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fexec failed, reason: connect ETIMEDOUT 104.16.2.35:443
+195 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+195 silly     at ClientRequest.emit (node:events:390:28)
+195 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+195 silly     at TLSSocket.emit (node:events:402:35)
+195 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+195 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+195 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+195 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fexec failed, reason: connect ETIMEDOUT 104.16.2.35:443
+195 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+195 silly     at ClientRequest.emit (node:events:390:28)
+195 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+195 silly     at TLSSocket.emit (node:events:402:35)
+195 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+195 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+195 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+195 silly   code: 'ETIMEDOUT',
+195 silly   errno: 'ETIMEDOUT',
+195 silly   syscall: 'connect',
+195 silly   address: '104.16.2.35',
+195 silly   port: 443,
+195 silly   type: 'system'
+195 silly }
+196 warn notice Package failed to publish: @jie-cli/exec
+197 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fexec failed, reason: connect ETIMEDOUT 104.16.2.35:443
+198 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+199 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fadd failed, reason: connect ETIMEDOUT 104.16.2.35:443
+199 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+199 silly     at ClientRequest.emit (node:events:390:28)
+199 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+199 silly     at TLSSocket.emit (node:events:402:35)
+199 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+199 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+199 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+199 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fadd failed, reason: connect ETIMEDOUT 104.16.2.35:443
+199 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+199 silly     at ClientRequest.emit (node:events:390:28)
+199 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+199 silly     at TLSSocket.emit (node:events:402:35)
+199 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+199 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+199 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+199 silly   code: 'ETIMEDOUT',
+199 silly   errno: 'ETIMEDOUT',
+199 silly   syscall: 'connect',
+199 silly   address: '104.16.2.35',
+199 silly   port: 443,
+199 silly   type: 'system'
+199 silly }
+200 warn notice Package failed to publish: @jie-cli/add
+201 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fadd failed, reason: connect ETIMEDOUT 104.16.2.35:443
+202 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+203 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fcore failed, reason: connect ETIMEDOUT 104.16.2.35:443
+203 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+203 silly     at ClientRequest.emit (node:events:390:28)
+203 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+203 silly     at TLSSocket.emit (node:events:402:35)
+203 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+203 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+203 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+203 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fcore failed, reason: connect ETIMEDOUT 104.16.2.35:443
+203 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+203 silly     at ClientRequest.emit (node:events:390:28)
+203 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+203 silly     at TLSSocket.emit (node:events:402:35)
+203 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+203 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+203 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+203 silly   code: 'ETIMEDOUT',
+203 silly   errno: 'ETIMEDOUT',
+203 silly   syscall: 'connect',
+203 silly   address: '104.16.2.35',
+203 silly   port: 443,
+203 silly   type: 'system'
+203 silly }
+204 warn notice Package failed to publish: @jie-cli/core
+205 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fcore failed, reason: connect ETIMEDOUT 104.16.2.35:443
+206 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+207 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fget-npm-info failed, reason: connect ETIMEDOUT 104.16.2.35:443
+207 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+207 silly     at ClientRequest.emit (node:events:390:28)
+207 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+207 silly     at TLSSocket.emit (node:events:402:35)
+207 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+207 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+207 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+207 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fget-npm-info failed, reason: connect ETIMEDOUT 104.16.2.35:443
+207 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+207 silly     at ClientRequest.emit (node:events:390:28)
+207 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+207 silly     at TLSSocket.emit (node:events:402:35)
+207 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+207 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+207 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+207 silly   code: 'ETIMEDOUT',
+207 silly   errno: 'ETIMEDOUT',
+207 silly   syscall: 'connect',
+207 silly   address: '104.16.2.35',
+207 silly   port: 443,
+207 silly   type: 'system'
+207 silly }
+208 warn notice Package failed to publish: @jie-cli/get-npm-info
+209 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fget-npm-info failed, reason: connect ETIMEDOUT 104.16.2.35:443
+210 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+211 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.2.35:443
+211 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+211 silly     at ClientRequest.emit (node:events:390:28)
+211 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+211 silly     at TLSSocket.emit (node:events:402:35)
+211 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+211 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+211 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+211 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.2.35:443
+211 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+211 silly     at ClientRequest.emit (node:events:390:28)
+211 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+211 silly     at TLSSocket.emit (node:events:402:35)
+211 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+211 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+211 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+211 silly   code: 'ETIMEDOUT',
+211 silly   errno: 'ETIMEDOUT',
+211 silly   syscall: 'connect',
+211 silly   address: '104.16.2.35',
+211 silly   port: 443,
+211 silly   type: 'system'
+211 silly }
+212 warn notice Package failed to publish: @jie-cli/format-path
+213 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2fformat-path failed, reason: connect ETIMEDOUT 104.16.2.35:443
+214 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+215 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2finit failed, reason: connect ETIMEDOUT 104.16.2.35:443
+215 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+215 silly     at ClientRequest.emit (node:events:390:28)
+215 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+215 silly     at TLSSocket.emit (node:events:402:35)
+215 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+215 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+215 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+215 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2finit failed, reason: connect ETIMEDOUT 104.16.2.35:443
+215 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+215 silly     at ClientRequest.emit (node:events:390:28)
+215 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+215 silly     at TLSSocket.emit (node:events:402:35)
+215 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+215 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+215 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+215 silly   code: 'ETIMEDOUT',
+215 silly   errno: 'ETIMEDOUT',
+215 silly   syscall: 'connect',
+215 silly   address: '104.16.2.35',
+215 silly   port: 443,
+215 silly   type: 'system'
+215 silly }
+216 warn notice Package failed to publish: @jie-cli/init
+217 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2finit failed, reason: connect ETIMEDOUT 104.16.2.35:443
+218 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+219 silly FetchError: request to https://registry.npmjs.org/@jie-cli%2futils failed, reason: connect ETIMEDOUT 104.16.2.35:443
+219 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+219 silly     at ClientRequest.emit (node:events:390:28)
+219 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+219 silly     at TLSSocket.emit (node:events:402:35)
+219 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+219 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+219 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21)
+219 silly  FetchError: request to https://registry.npmjs.org/@jie-cli%2futils failed, reason: connect ETIMEDOUT 104.16.2.35:443
+219 silly     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+219 silly     at ClientRequest.emit (node:events:390:28)
+219 silly     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+219 silly     at TLSSocket.emit (node:events:402:35)
+219 silly     at emitErrorNT (node:internal/streams/destroy:157:8)
+219 silly     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+219 silly     at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+219 silly   code: 'ETIMEDOUT',
+219 silly   errno: 'ETIMEDOUT',
+219 silly   syscall: 'connect',
+219 silly   address: '104.16.2.35',
+219 silly   port: 443,
+219 silly   type: 'system'
+219 silly }
+220 warn notice Package failed to publish: @jie-cli/utils
+221 error ETIMEDOUT request to https://registry.npmjs.org/@jie-cli%2futils failed, reason: connect ETIMEDOUT 104.16.2.35:443
+222 error errno "ETIMEDOUT" is not a valid exit code - exiting with code 1
+223 error FetchError: request to https://registry.npmjs.org/@jie-cli%2fpackage failed, reason: connect ETIMEDOUT 104.16.2.35:443
+223 error     at ClientRequest.<anonymous> (D:\Project\Learn\webimooc\jie-cli\node_modules\npm-registry-fetch\node_modules\minipass-fetch\lib\index.js:130:14)
+223 error     at ClientRequest.emit (node:events:390:28)
+223 error     at TLSSocket.socketErrorListener (node:_http_client:447:9)
+223 error     at TLSSocket.emit (node:events:402:35)
+223 error     at emitErrorNT (node:internal/streams/destroy:157:8)
+223 error     at emitErrorCloseNT (node:internal/streams/destroy:122:3)
