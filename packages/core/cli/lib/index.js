@@ -28,6 +28,9 @@ async function core() {
     registerCommand();
   } catch (error) {
     log.error(error.message)
+    if (process.env.LOG_LEVEL === 'verbose' || program.debug) {
+      console.log(error)
+    }
   }
 }
 
@@ -97,7 +100,6 @@ function registerCommand() {
 
   if (program.args && program.args.length < 1) {
     program.outputHelp();
-    console.log()
   }
 
 }

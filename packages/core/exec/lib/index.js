@@ -11,7 +11,7 @@ const SETTINGS = {
 
 const CACHE_DIR = 'dependencies'
 
-function exec() {
+async function exec() {
   let targetPath = process.env.CLI_TARGET_PATH
   let storeDir = ''
   let pkg
@@ -42,11 +42,12 @@ function exec() {
       packageName,
       packageVersion
     });
-    if (pkg.exists()) {
+    if (await pkg.exists()) {
       // 更新package
+      console.log('更新package');
     } else {
       // 安装package
-      pkg.install();
+      await pkg.install();
     }
   } else {
     pkg = new Package({
@@ -57,9 +58,12 @@ function exec() {
   }
 
   // example rootFile => D:/Project/Learn/webimooc/jie-cli/packages/commands/init/lib/index.js
-  console.log('arguments', arguments)
+  console.log('pkgexist', await pkg.exists())
+  // console.log('arguments', arguments)
   const rootFile = pkg.getRootFilePath();
-  require(rootFile).apply(null, arguments);
+  if (rootFile) {
+    require(rootFile).apply(null, arguments);
+  }
 
   // console.log(pkg)
   // console.log(pkg.getRootFilePath());

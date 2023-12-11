@@ -7,7 +7,7 @@ module.exports = formatPath;
 function formatPath(p) {
   if (p && typeof p === 'string') {
     const sep = path.sep
-    console.log(sep)
+    // console.log(sep)
     if (sep === '/') {
       return p
     } else {
