@@ -25,7 +25,7 @@ function getNpmInfo(npmName, registry) {
   });
 }
 
-function getDefaultRegistry(isOriginal = true) {
+function getDefaultRegistry(isOriginal = false) {
   return isOriginal ? 'https://registry.npmjs.org' : 'https://registry.npm.taobao.org'
 }
 

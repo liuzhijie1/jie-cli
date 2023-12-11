@@ -22,7 +22,7 @@
   "scripts": {
     "test": "node ./__tests__/core.test.js"
   },
-  "gitHead": "defe8e5cc3de7868e413f7c6e5493eedef4627e7",
+  "gitHead": "4d35e87d2af535675f048a124fbb1399707ccbc8",
   "dependencies": {
     "@jie-cli/exec": "file:../../../exec",
     "@jie-cli/get-npm-info": "file:../../../../utils/get-npm-info",
