@@ -29,5 +29,6 @@
   "dependencies": {
     "@jie-cli/log": "file:../../../../utils/log",
     "@jie-cli/package": "file:../../../../models/package"
-  }
+  },
+  "gitHead": "922aafd4d6cac7e7aed099b7fa36e038162f632b"
 }
