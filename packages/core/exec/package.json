@@ -30,5 +30,5 @@
     "@jie-cli/log": "file:../../../../utils/log",
     "@jie-cli/package": "file:../../../../models/package"
   },
-  "gitHead": "49323d874bd737578ece4c1a8a92df2b5e587b67"
+  "gitHead": "78c86be36b303dd1c179636805fd319dc58137f9"
 }
