@@ -30,6 +30,7 @@
     "@jie-cli/format-path": "file:../../../../utils/format-path",
     "@jie-cli/get-npm-info": "file:../../../../utils/get-npm-info",
     "@jie-cli/utils": "file:../../../../utils/utils",
+    "fs-extra": "^11.2.0",
     "npminstall": "^7.11.1",
     "path-exists": "^4.0.0",
     "pkg-dir": "^5.0.0"
