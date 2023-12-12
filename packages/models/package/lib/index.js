@@ -37,10 +37,11 @@ class Package {
   }
 
   async prepare() {
+    
     if (this.packageVersion === 'latest') {
       this.packageVersion = await getNpmLatestVersion(this.packageName)
     }
-    console.log(this.packageVersion)
+    // console.log(this.packageVersion)
   }
 
   get cacheFilePath() {
