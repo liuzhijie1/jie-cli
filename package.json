@@ -10,5 +10,8 @@
   ],
   "devDependencies": {
     "lerna": "^7.4.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npm.taobao.org"
   }
 }
