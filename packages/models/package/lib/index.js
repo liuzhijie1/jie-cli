@@ -26,7 +26,7 @@ class Package {
     return npminstall({
       root: this.targetPath,
       storeDir: this.storeDir,
-      registry: getDefaultRegistry(true),
+      registry: getDefaultRegistry(),
       pkgs: [
         {
           name: this.packageName,
@@ -37,7 +37,7 @@ class Package {
   }
 
   async prepare() {
-    
+
     if (this.packageVersion === 'latest') {
       this.packageVersion = await getNpmLatestVersion(this.packageName)
     }
