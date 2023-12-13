@@ -68,7 +68,7 @@ function registerCommand() {
     .action(exec)
 
   program.on('option:debug', function () {
-    console.log('监听是否执行', this.opts())
+    // console.log('监听是否执行', this.opts())
     if (this.opts().debug) {
       process.env.LOG_LEVEL = 'verbose'
     } else {
@@ -78,7 +78,7 @@ function registerCommand() {
   })
 
   program.on('option:targetPath', function () {
-    console.log(this.opts())
+    // console.log(this.opts())
     process.env.CLI_TARGET_PATH = this.opts().targetPath;
   })
 
@@ -146,7 +146,7 @@ function checkEnv() {
 function checkInputArgs() {
   const minimist = require('minimist')
   args = minimist(process.argv.slice(2))
-  console.log(args)
+  // console.log(args)
   checkArgs();
 }
 

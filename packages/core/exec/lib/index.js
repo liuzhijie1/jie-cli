@@ -27,8 +27,8 @@ async function exec() {
   const packageName = SETTINGS[cmdName]
   const packageVersion = 'latest'
 
-  console.log(cmbObj)
-  console.log(command.name())
+  // console.log(cmbObj)
+  // console.log(command.name())
 
   if (!targetPath) {
     // 生产缓存路径
@@ -44,7 +44,8 @@ async function exec() {
     });
     if (await pkg.exists()) {
       // 更新package
-      console.log('更新package');
+      // console.log('更新package');
+      await pkg.update();
     } else {
       // 安装package
       await pkg.install();
@@ -58,9 +59,10 @@ async function exec() {
   }
 
   // example rootFile => D:/Project/Learn/webimooc/jie-cli/packages/commands/init/lib/index.js
-  console.log('pkgexist', await pkg.exists())
+  // console.log('pkgexist', await pkg.exists())
   // console.log('arguments', arguments)
   const rootFile = pkg.getRootFilePath();
+  console.log('rootFile', rootFile)
   if (rootFile) {
     require(rootFile).apply(null, arguments);
   }
