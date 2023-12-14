@@ -41,7 +41,7 @@ async function prepare() {
   // models();
   // exec();
   checkPkgVersion()
-  checkNodeVersion();
+  // checkNodeVersion();
   checkRoot()
   checkUserHome();
   // checkInputArgs();

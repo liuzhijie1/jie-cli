@@ -4,6 +4,7 @@ const Package = require('@jie-cli/package')
 const log = require('@jie-cli/log')
 
 const path = require('path')
+const cp = require('child_process')
 
 const SETTINGS = {
   init: "@jie-cli/init"
@@ -64,13 +65,57 @@ async function exec() {
   const rootFile = pkg.getRootFilePath();
   console.log('rootFile', rootFile)
   if (rootFile) {
-    require(rootFile).apply(null, arguments);
-  }
+    try {
+      // NOTE 在主线程中执行的 
+      // require(rootFile).call(null, Array.from(arguments));
+      const args = Array.from(arguments)
+      const cmd = args[args.length - 1]
+      const o = Object.create(null)
+      Object.keys(cmd).forEach(key => {
+        if (cmd.hasOwnProperty(key) && !key.startsWith('_') && key !== 'parent') {
+          o[key] = cmd[key]
+        }
+      })
+      // console.log('cmd', cmd)
+      // console.log('o', o)
+      args[args.length - 1] = o;
+      const code = `require('${rootFile}').call(null, ${JSON.stringify(args)})`
+      // NOTE 在windos下系统浴缸执行的命令
+      // cp.spawn('cmd', ['/c', 'node', '-e', code]) 
+      const child = spawn('node', ['-e', code], {
+        cwd: process.cwd(),
+        stdio: 'inherit'
+      })
+      child.on('error', e => {
+        log.error(e.message)
+        process.exit(1)
+      })
+      child.on('exit', e => {
+        log.verbose('命令执行成功: ' + e)
+        process.exit(e)
+      })
+      // child.stdout.on('data', (chunk => {
 
+      // }))
+      // child.stderr.on('data', (chunk => {
+
+      // }))
+    } catch (error) {
+      log.error(error.message)
+    }
+  }
   // console.log(pkg)
   // console.log(pkg.getRootFilePath());
   // console.log('exec')
+}
 
+function spawn(command, args, options) {
+  const win32 = process.platform === 'win32';
+
+  const cmd = win32 ? 'cmd' : command;
+  const cmdArgs = win32 ? ['/c'].concat(command, args) : args
+
+  return cp.spawn(cmd, cmdArgs, options || {});
 }
 
 
