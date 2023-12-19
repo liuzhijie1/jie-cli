@@ -7,7 +7,7 @@ const { isObject } = require('@jie-cli/utils')
 
 class Command {
   constructor(argv) {
-    log.verbose('Command constructor', argv)
+    // log.verbose('Command constructor', argv)
     if (!argv) {
       throw new Error('参数不能为空')
     }

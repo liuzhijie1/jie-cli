@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "@jie-cli/command": "file:../../../../models/command",
-    "@jie-cli/log": "file:../../../../utils/log"
+    "@jie-cli/log": "file:../../../../utils/log",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^8.0.0"
   },
   "gitHead": "dfa0705c558637b862fcc68c511d8fc2eebc0d63"
 }
