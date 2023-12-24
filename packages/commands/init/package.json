@@ -29,9 +29,13 @@
   "dependencies": {
     "@jie-cli/command": "file:../../../../models/command",
     "@jie-cli/log": "file:../../../../utils/log",
+    "@jie-cli/package": "file:../../../../models/package",
+    "@jie-cli/request": "file:../../../../utils/request",
+    "@jie-cli/utils": "file:../../../../utils/utils",
     "fs-extra": "^11.2.0",
-    "inquirer": "^8.0.0",
-    "semver": "^7.5.4"
+    "inquirer": "^7.0.0",
+    "semver": "^7.5.4",
+    "user-home": "^2.0.0"
   },
   "gitHead": "dfa0705c558637b862fcc68c511d8fc2eebc0d63"
 }

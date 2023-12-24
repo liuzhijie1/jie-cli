@@ -1,12 +1,17 @@
 'use strict';
 
 const Command = require('@jie-cli/command')
+const Package = require('@jie-cli/package')
 const log = require('@jie-cli/log')
+const { spinnerStart } = require('@jie-cli/utils')
 
 const fs = require('fs')
 const inquirer = require('inquirer')
 const fse = require('fs-extra')
 const semver = require('semver')
+const path = require('path')
+const userHome = require('user-home')
+const getProjectTemplate = require('./getProjectTemplate')
 
 const TYPE_PROJECT = 'project'
 const TYPE_COMPONENT = 'component'
@@ -28,7 +33,8 @@ class InitCommand extends Command {
       const projectInfo = await this.prepare();
       if (projectInfo) {
         log.verbose('projectInfo', projectInfo)
-        this.downloadTemplate(projectInfo)
+        this.projectInfo = projectInfo;
+        await this.downloadTemplate(projectInfo)
       }
     } catch (error) {
       log.error(error.message)
@@ -36,6 +42,14 @@ class InitCommand extends Command {
   }
 
   async prepare() {
+
+    const template = await getProjectTemplate();
+    console.log('template', template)
+    if (!template || template.length === 0) {
+      throw new Error('项目模板不存在')
+    }
+    this.template = template;
+
     const localPath = process.cwd();
     if (!this.isDirEmpty(localPath)) {
       let ifContinue = false;
@@ -65,13 +79,48 @@ class InitCommand extends Command {
     return this.getProjectInfo();
   }
 
-  downloadTemplate() {
+  async downloadTemplate() {
     // 1. 通过项目模板API获取项目模板信息
     // 1.1 通过egg.js 搭建一套后端系统
     // 1.2 通过npm存储项目模板
     // 1.3 将项目模板信息存储到mongodb数据库中
     // 1.4 通过egg.js 获取mongodb中的数据并且通过API 返回
-
+    console.log('downloadTemplate', this.projectInfo, this.template)
+    const { projectTemplate } = this.projectInfo;
+    const templateInfo = this.template.find(item => item.npmName === projectTemplate)
+    console.log('templateInfo', templateInfo);
+    console.log('userHome', userHome);
+    const targetPath = path.resolve(userHome, '.jie-cli', 'template')
+    const storeDir = path.resolve(userHome, '.jie-cli', 'template', 'node_modules')
+    console.log(targetPath, storeDir)
+    const { npmName, version } = templateInfo
+    const templateNpm = new Package({
+      targetPath,
+      storeDir,
+      packageName: npmName,
+      packageVersion: version
+    })
+    if (!templateNpm.exists()) {
+      const spinner = spinnerStart('正在下载模板...');
+      try {
+        await templateNpm.install()
+        log.success('下载模板成功')
+      } catch (error) {
+        throw error
+      } finally {
+        spinner.stop(true)
+      }
+    } else {
+      const spinner = spinnerStart('正在更新模板...');
+      try {
+        await templateNpm.update()
+        log.success('更新模板成功')
+      } catch (error) {
+        throw error
+      } finally {
+        spinner.stop(true)
+      }
+    }
   }
 
   async getProjectInfo() {
@@ -143,6 +192,12 @@ class InitCommand extends Command {
               return v;
             }
           }
+        },
+        {
+          type: 'list',
+          name: 'projectTemplate',
+          message: '请选择项目模板',
+          choices: this.createTemplateChoice()
         }
       ])
       projectInfo = {
@@ -153,6 +208,13 @@ class InitCommand extends Command {
 
     }
     return projectInfo;
+  }
+
+  createTemplateChoice() {
+    return this.template.map((item) => ({
+      value: item.npmName,
+      name: item.name
+    }))
   }
 
   isDirEmpty(localPath) {

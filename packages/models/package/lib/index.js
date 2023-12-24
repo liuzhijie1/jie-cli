@@ -41,8 +41,10 @@ class Package {
     await this.prepare();
     const latestPackageVersion = await getNpmLatestVersion(this.packageName)
     const latestFilePath = this.getSpecificCacheFilePath(latestPackageVersion);
-    // console.log('latestPackageVersion', latestPackageVersion, pathExists(latestFilePath), latestFilePath)
-    if (!pathExists(latestFilePath)) {
+    console.log('latestPackageVersion', latestPackageVersion, pathExists(latestFilePath), latestFilePath)
+    const prePackageJson = require(path.resolve(latestFilePath, 'package.json'))
+    // console.log(prePackageJson)
+    if (!pathExists(latestFilePath) || prePackageJson.version !== latestPackageVersion) {
       await npminstall({
         root: this.targetPath,
         storeDir: this.storeDir,
