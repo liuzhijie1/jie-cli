@@ -16,6 +16,9 @@ const getProjectTemplate = require('./getProjectTemplate')
 const TYPE_PROJECT = 'project'
 const TYPE_COMPONENT = 'component'
 
+const TEMPLATE_TYPE_NORMAL = 'normal'
+const TEMPLATE_TYPE_CUSTOM = 'custom'
+
 class InitCommand extends Command {
   init() {
     this.projectName = this._argv[0] || ''
@@ -35,10 +38,39 @@ class InitCommand extends Command {
         log.verbose('projectInfo', projectInfo)
         this.projectInfo = projectInfo;
         await this.downloadTemplate(projectInfo)
+        // 3. 安装模板
+        await this.installTemplate()
       }
     } catch (error) {
       log.error(error.message)
     }
+  }
+
+  async installTemplate() {
+    console.log('installTemplate', this.templateInfo)
+    if (this.templateInfo) {
+      if (!this.templateInfo.type) {
+        this.templateInfo.type = TEMPLATE_TYPE_NORMAL
+      }
+      if (this.templateInfo.type === TEMPLATE_TYPE_NORMAL) {
+        await this.installNormalTemplate()
+      } else if (this.templateInfo.type === TEMPLATE_TYPE_CUSTOM) {
+        await this.installCustomTemplate()
+      } else {
+        throw new Error('无法识别项目模板类别！')
+      }
+    } else {
+      throw new Error('模板信息不存在！')
+    }
+  }
+
+  async installNormalTemplate() {
+    console.log('安装标准模板')
+    console.log(this.templateNpm.cacheFilePath)
+  }
+
+  async installCustomTemplate() {
+    console.log('安装自定义模板')
   }
 
   async prepare() {
@@ -94,31 +126,38 @@ class InitCommand extends Command {
     const storeDir = path.resolve(userHome, '.jie-cli', 'template', 'node_modules')
     console.log(targetPath, storeDir)
     const { npmName, version } = templateInfo
+    this.templateInfo = templateInfo
     const templateNpm = new Package({
       targetPath,
       storeDir,
       packageName: npmName,
       packageVersion: version
     })
-    if (!templateNpm.exists()) {
+    if (!(await templateNpm.exists())) {
       const spinner = spinnerStart('正在下载模板...');
       try {
         await templateNpm.install()
-        log.success('下载模板成功')
       } catch (error) {
         throw error
       } finally {
         spinner.stop(true)
+        if (await templateNpm.exists()) {
+          log.success('下载模板成功')
+          this.templateNpm = templateNpm
+        }
       }
     } else {
       const spinner = spinnerStart('正在更新模板...');
       try {
         await templateNpm.update()
-        log.success('更新模板成功')
       } catch (error) {
         throw error
       } finally {
         spinner.stop(true)
+        if (await templateNpm.exists()) {
+          log.success('更新模板成功')
+          this.templateNpm = templateNpm
+        }
       }
     }
   }
