@@ -2,9 +2,10 @@
 
 const Package = require('@jie-cli/package')
 const log = require('@jie-cli/log')
+const { exec: spawn } = require('@jie-cli/utils');
 
 const path = require('path')
-const cp = require('child_process')
+// const cp = require('child_process')
 
 const SETTINGS = {
   init: "@jie-cli/init"
@@ -109,14 +110,14 @@ async function exec() {
   // console.log('exec')
 }
 
-function spawn(command, args, options) {
-  const win32 = process.platform === 'win32';
+// function spawn(command, args, options) {
+//   const win32 = process.platform === 'win32';
 
-  const cmd = win32 ? 'cmd' : command;
-  const cmdArgs = win32 ? ['/c'].concat(command, args) : args
+//   const cmd = win32 ? 'cmd' : command;
+//   const cmdArgs = win32 ? ['/c'].concat(command, args) : args
 
-  return cp.spawn(cmd, cmdArgs, options || {});
-}
+//   return cp.spawn(cmd, cmdArgs, options || {});
+// }
 
 
 module.exports = exec;

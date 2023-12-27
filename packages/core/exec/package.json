@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "@jie-cli/log": "file:../../../../utils/log",
-    "@jie-cli/package": "file:../../../../models/package"
+    "@jie-cli/package": "file:../../../../models/package",
+    "@jie-cli/utils": "file:../../../../utils/utils"
   },
   "gitHead": "dfa0705c558637b862fcc68c511d8fc2eebc0d63"
 }

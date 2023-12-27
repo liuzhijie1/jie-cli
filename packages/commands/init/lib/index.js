@@ -3,7 +3,7 @@
 const Command = require('@jie-cli/command')
 const Package = require('@jie-cli/package')
 const log = require('@jie-cli/log')
-const { spinnerStart } = require('@jie-cli/utils')
+const { spinnerStart, execAsync } = require('@jie-cli/utils')
 
 const fs = require('fs')
 const inquirer = require('inquirer')
@@ -18,6 +18,8 @@ const TYPE_COMPONENT = 'component'
 
 const TEMPLATE_TYPE_NORMAL = 'normal'
 const TEMPLATE_TYPE_CUSTOM = 'custom'
+
+const WHITE_COMMAND = ['npm', 'cnpm']
 
 class InitCommand extends Command {
   init() {
@@ -64,8 +66,37 @@ class InitCommand extends Command {
     }
   }
 
+  checkCommand(cmd) {
+    if (WHITE_COMMAND.includes(cmd)) {
+      return cmd;
+    }
+    return null;
+  }
+
+  async execCommand(command, errorMsg = '') {
+    let ret;
+    if (command) {
+      const cmdArray = command.split(' ')
+      const cmd = this.checkCommand(cmdArray[0])
+      if (!cmd) {
+        throw new Error('命令不在白名单中 ' + cmd)
+      }
+      const args = cmdArray.slice(1)
+      console.log('cmd args', cmd, args)
+      ret = await execAsync(cmd, args, {
+        stdio: 'inherit',
+        cwd: process.cwd()
+      })
+    }
+    if (ret !== 0) {
+      throw new Error(errorMsg)
+    }
+    return ret;
+  }
+
   async installNormalTemplate() {
     console.log('安装标准模板')
+    log.verbose('templateNpm', this.templateNpm)
     console.log(this.templateNpm.cacheFilePath)
     const spinner = spinnerStart('正在安装模板...');
     try {
@@ -82,6 +113,10 @@ class InitCommand extends Command {
       log.success('模板安装成功')
       // }
     }
+    // 依赖安装
+    const { installCommand, startCommand } = this.templateInfo
+    await this.execCommand(installCommand, '依赖安装过程失败')
+    await this.execCommand(startCommand, '启动命令过程失败')
   }
 
   async installCustomTemplate() {
