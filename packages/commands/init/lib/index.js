@@ -67,6 +67,21 @@ class InitCommand extends Command {
   async installNormalTemplate() {
     console.log('安装标准模板')
     console.log(this.templateNpm.cacheFilePath)
+    const spinner = spinnerStart('正在安装模板...');
+    try {
+      const templatePath = path.resolve(this.templateNpm.cacheFilePath, 'template')
+      const targetPath = process.cwd();
+      fse.ensureDirSync(templatePath)
+      fse.ensureDirSync(targetPath)
+      fse.copySync(templatePath, targetPath)
+    } catch (error) {
+      throw error;
+    } finally {
+      spinner.stop(true)
+      // if (fs) {
+      log.success('模板安装成功')
+      // }
+    }
   }
 
   async installCustomTemplate() {
