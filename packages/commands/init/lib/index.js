@@ -12,6 +12,8 @@ const semver = require('semver')
 const path = require('path')
 const userHome = require('user-home')
 const getProjectTemplate = require('./getProjectTemplate')
+const { glob } = require('glob')
+const ejs = require('ejs')
 
 const TYPE_PROJECT = 'project'
 const TYPE_COMPONENT = 'component'
@@ -45,6 +47,9 @@ class InitCommand extends Command {
       }
     } catch (error) {
       log.error(error.message)
+      if (process.env.LOG_LEVEL === 'verbose') {
+        console.log(error)
+      }
     }
   }
 
@@ -94,6 +99,35 @@ class InitCommand extends Command {
     return ret;
   }
 
+  async ejsRender(options) {
+    const dir = process.cwd();
+    const files = await glob('**', {
+      cwd: dir,
+      ignore: options.ignore || '',
+      nodir: true
+    })
+    Promise.all(files.map((file) => {
+      const filePath = path.join(dir, file);
+      // console.log(filePath)
+      return new Promise((resolve, reject) => {
+        ejs.renderFile(filePath, this.projectInfo, {}, (err, result) => {
+          // console.log(err, result)
+          if (err) {
+            reject(err)
+          } else {
+            fse.writeFileSync(filePath, result);
+            resolve(result)
+          }
+        })
+      })
+    })).then(() => {
+
+    }).catch(err => {
+      throw err;
+    })
+    // console.log(files)
+  }
+
   async installNormalTemplate() {
     console.log('安装标准模板')
     log.verbose('templateNpm', this.templateNpm)
@@ -113,6 +147,8 @@ class InitCommand extends Command {
       log.success('模板安装成功')
       // }
     }
+    const ignore = ['node_modules/**', 'public/**']
+    await this.ejsRender({ ignore });
     // 依赖安装
     const { installCommand, startCommand } = this.templateInfo
     await this.execCommand(installCommand, '依赖安装过程失败')
@@ -213,7 +249,15 @@ class InitCommand extends Command {
   }
 
   async getProjectInfo() {
+    function isValidName(v) {
+      return /^[a-zA-Z]+([-][a-zA-Z][a-zA-Z0-9]*|[_][a-zA-Z][a-zA-Z0-9]*|[a-zA-Z0-9])*$/.test(v)
+    }
     let projectInfo = {};
+    let isProjectNameValid = false;
+    if (isValidName(this.projectName)) {
+      isProjectNameValid = true
+      projectInfo.projectName = this.projectName
+    }
     const { type } = await inquirer.prompt({
       type: 'list',
       name: 'type',
@@ -229,35 +273,36 @@ class InitCommand extends Command {
     })
     log.verbose('type', type)
     if (type === TYPE_PROJECT) {
-      const project = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'projectName',
-          message: '',
-          default: '',
-          validate: function (v) {
-            const done = this.async();
+      const projectNamePrompt = {
+        type: 'input',
+        name: 'projectName',
+        message: '',
+        default: '',
+        validate: function (v) {
+          const done = this.async();
 
-            setTimeout(function () {
-              if (!/^[a-zA-Z]+([-][a-zA-Z][a-zA-Z0-9]*|[_][a-zA-Z][a-zA-Z0-9]*|[a-zA-Z0-9])*$/.test(v)) {
-                done('请输入合法的项目名称')
-                return
-              }
-              done(null, true)
-            }, 0)
-            // 1. 首字符必须为英文字符
-            // 2. 尾字符必须为英文或数字，不能为字符
-            // 3. 字符仅允许"-_"
+          setTimeout(function () {
+            if (!isValidName(v)) {
+              done('请输入合法的项目名称')
+              return
+            }
+            done(null, true)
+          }, 0)
+          // 1. 首字符必须为英文字符
+          // 2. 尾字符必须为英文或数字，不能为字符
+          // 3. 字符仅允许"-_"
 
-            // 合法: a, a-b, a_b, a-b-c, a_b_c, a-b1-c1, a_b1_c1
-            // 不合法: 1, a_, a-, a_1, a-1
-            // return /^[a-zA-Z]+[\w-]*[a-zA-Z0-9]$/.test(v)
-            // return /^[a-zA-Z]+([-][a-zA-Z][a-zA-Z0-9]*|[_][a-zA-Z][a-zA-Z0-9]*|[a-zA-Z0-9])*$/.test(v)
-          },
-          filter: function (v) {
-            return v;
-          }
+          // 合法: a, a-b, a_b, a-b-c, a_b_c, a-b1-c1, a_b1_c1
+          // 不合法: 1, a_, a-, a_1, a-1
+          // return /^[a-zA-Z]+[\w-]*[a-zA-Z0-9]$/.test(v)
+          // return /^[a-zA-Z]+([-][a-zA-Z][a-zA-Z0-9]*|[_][a-zA-Z][a-zA-Z0-9]*|[a-zA-Z0-9])*$/.test(v)
         },
+        filter: function (v) {
+          return v;
+        }
+      }
+      const project = await inquirer.prompt([
+        ...(isProjectNameValid ? [] : [projectNamePrompt]),
         {
           type: 'input',
           name: 'projectVersion',
@@ -290,11 +335,20 @@ class InitCommand extends Command {
         }
       ])
       projectInfo = {
+        ...projectInfo,
         type,
         ...project
       }
     } else if (type === TYPE_COMPONENT) {
 
+    }
+    // AbcEfg => abc-efg
+    if (projectInfo.projectName) {
+      projectInfo.name = projectInfo.projectName
+      projectInfo.className = require('kebab-case')(projectInfo.projectName).replace(/^-/, '');
+    }
+    if (projectInfo.projectVersion) {
+      projectInfo.version = projectInfo.projectVersion
     }
     return projectInfo;
   }
