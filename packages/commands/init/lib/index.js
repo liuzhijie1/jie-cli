@@ -147,7 +147,8 @@ class InitCommand extends Command {
       log.success('模板安装成功')
       // }
     }
-    const ignore = ['node_modules/**', 'public/**']
+    const templteIgnore = this.templateInfo.ignore || []
+    const ignore = ['node_modules/**', ...templteIgnore]
     await this.ejsRender({ ignore });
     // 依赖安装
     const { installCommand, startCommand } = this.templateInfo
@@ -157,6 +158,28 @@ class InitCommand extends Command {
 
   async installCustomTemplate() {
     console.log('安装自定义模板')
+    if (await this.templateNpm.exists()) {
+      const rootFile = this.templateNpm.getRootFilePath();
+      console.log(rootFile)
+      if (fs.existsSync(rootFile)) {
+        log.notice('开始执行自定义模板')
+        const templatePath = path.resolve(this.templateNpm.cacheFilePath, 'template');
+        const options = {
+          templateInfo: this.templateInfo,
+          projectInfo: this.projectInfo,
+          sourcePath: templatePath,
+          targetPath: process.cwd()
+        }
+        const code = `require('${rootFile}')(${JSON.stringify(options)})`
+        await execAsync('node', ['-e', code], {
+          stdio: 'inherit',
+          cwd: process.cwd()
+        })
+        log.success('自定义模板安装成功')
+      } else {
+        throw new Error('自定义模块入口文件不存在！')
+      }
+    }
   }
 
   async prepare() {
@@ -272,75 +295,102 @@ class InitCommand extends Command {
       }]
     })
     log.verbose('type', type)
-    if (type === TYPE_PROJECT) {
-      const projectNamePrompt = {
+    this.template = this.template.filter((template) => template.tag.includes(type))
+    const title = type === TYPE_PROJECT ? '项目' : '组件'
+    const promptList = [];
+    const projectNamePrompt = {
+      type: 'input',
+      name: 'projectName',
+      message: `请输入${title}名称`,
+      default: '',
+      validate: function (v) {
+        const done = this.async();
+
+        setTimeout(function () {
+          if (!isValidName(v)) {
+            done(`请输入合法的${title}名称`)
+            return
+          }
+          done(null, true)
+        }, 0)
+        // 1. 首字符必须为英文字符
+        // 2. 尾字符必须为英文或数字，不能为字符
+        // 3. 字符仅允许"-_"
+
+        // 合法: a, a-b, a_b, a-b-c, a_b_c, a-b1-c1, a_b1_c1
+        // 不合法: 1, a_, a-, a_1, a-1
+        // return /^[a-zA-Z]+[\w-]*[a-zA-Z0-9]$/.test(v)
+        // return /^[a-zA-Z]+([-][a-zA-Z][a-zA-Z0-9]*|[_][a-zA-Z][a-zA-Z0-9]*|[a-zA-Z0-9])*$/.test(v)
+      },
+      filter: function (v) {
+        return v;
+      }
+    }
+    !isProjectNameValid && promptList.push(projectNamePrompt);
+    promptList.push(...[
+      {
         type: 'input',
-        name: 'projectName',
-        message: '',
-        default: '',
+        name: 'projectVersion',
+        message: `请输入${title}版本号`,
+        default: '1.0.0',
         validate: function (v) {
           const done = this.async();
 
           setTimeout(function () {
-            if (!isValidName(v)) {
-              done('请输入合法的项目名称')
+            if (!(!!semver.valid(v))) {
+              done(`请输入合法的${title}版本号`)
               return
             }
             done(null, true)
           }, 0)
-          // 1. 首字符必须为英文字符
-          // 2. 尾字符必须为英文或数字，不能为字符
-          // 3. 字符仅允许"-_"
-
-          // 合法: a, a-b, a_b, a-b-c, a_b_c, a-b1-c1, a_b1_c1
-          // 不合法: 1, a_, a-, a_1, a-1
-          // return /^[a-zA-Z]+[\w-]*[a-zA-Z0-9]$/.test(v)
-          // return /^[a-zA-Z]+([-][a-zA-Z][a-zA-Z0-9]*|[_][a-zA-Z][a-zA-Z0-9]*|[a-zA-Z0-9])*$/.test(v)
         },
         filter: function (v) {
-          return v;
-        }
-      }
-      const project = await inquirer.prompt([
-        ...(isProjectNameValid ? [] : [projectNamePrompt]),
-        {
-          type: 'input',
-          name: 'projectVersion',
-          message: '请输入项目版本号',
-          default: '1.0.0',
-          validate: function (v) {
-            const done = this.async();
-
-            setTimeout(function () {
-              if (!(!!semver.valid(v))) {
-                done('请输入合法的版本号')
-                return
-              }
-              done(null, true)
-            }, 0)
-          },
-          filter: function (v) {
-            if (!!semver.valid(v)) {
-              return semver.valid(v);
-            } else {
-              return v;
-            }
+          if (!!semver.valid(v)) {
+            return semver.valid(v);
+          } else {
+            return v;
           }
-        },
-        {
-          type: 'list',
-          name: 'projectTemplate',
-          message: '请选择项目模板',
-          choices: this.createTemplateChoice()
         }
-      ])
+      },
+      {
+        type: 'list',
+        name: 'projectTemplate',
+        message: `请选择${title}模板`,
+        choices: this.createTemplateChoice()
+      }
+    ])
+    if (type === TYPE_PROJECT) {
+      const project = await inquirer.prompt(promptList)
       projectInfo = {
         ...projectInfo,
         type,
         ...project
       }
     } else if (type === TYPE_COMPONENT) {
+      const descriptionPrompt = {
+        type: 'input',
+        name: 'componentDescription',
+        message: '请输入组件描述信息',
+        default: '',
+        validate: function (v) {
+          const done = this.async();
 
+          setTimeout(function () {
+            if (!v) {
+              done('请输入组件描述信息')
+              return
+            }
+            done(null, true)
+          }, 0)
+        }
+      }
+      promptList.push(descriptionPrompt)
+      const component = await inquirer.prompt(promptList)
+      projectInfo = {
+        ...projectInfo,
+        type,
+        ...component
+      }
     }
     // AbcEfg => abc-efg
     if (projectInfo.projectName) {
@@ -349,6 +399,9 @@ class InitCommand extends Command {
     }
     if (projectInfo.projectVersion) {
       projectInfo.version = projectInfo.projectVersion
+    }
+    if (projectInfo.componentDescription) {
+      projectInfo.description = projectInfo.componentDescription
     }
     return projectInfo;
   }
