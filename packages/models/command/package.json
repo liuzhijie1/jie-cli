@@ -1,6 +1,6 @@
 {
   "name": "@jie-cli/command",
-  "version": "0.0.33",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "liuzhijie1 <572890972@qq.com>",
   "homepage": "https://github.com/liuzhijie1/jie-cli#readme",
@@ -27,9 +27,9 @@
     "url": "https://github.com/liuzhijie1/jie-cli/issues"
   },
   "dependencies": {
-    "semver": "^7.5.4",
-    "colors": "^1.4.0",
     "@jie-cli/log": "file:../../../../utils/log",
-    "@jie-cli/utils": "file:../../../../utils/utils"
+    "@jie-cli/utils": "file:../../../../utils/utils",
+    "colors": "^1.4.0",
+    "semver": "^7.5.4"
   }
 }
